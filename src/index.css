@@ -8,15 +8,15 @@
 :root {
   /* Light Mode */
   --bg: #ffffff;
-  --text: #2f3b16;
-  --primary: #6c6c2e;
+  --text: #2c4171;
+  --primary: #333d55;
 }
 
 .dark {
   /* Dark Mode */
-  --bg: #35352a;
-  --text: #eef3dc;
-  --primary: #6c6c2e;
+  --bg: #2a3c67;
+  --text: #21211e;
+  --primary: #e9ecf4;
 }
 
 @theme {

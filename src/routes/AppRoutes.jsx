@@ -4,10 +4,48 @@ import ProtectedRoute from "../components/auth/ProtectedRoute";
 import NotFound from "../pages/NotFound";
 import DashboardLayout from "../layouts/DashboardLayout";
 
+const renderRoutes = (routes) => {
+    return routes.flatMap((route) => {
+        const routeElement = [];
+
+        // Normal route
+        if (route.path && route.component) {
+            const Component = route.component;
+
+            routeElement.push(
+                <Route
+                    key={route.path}
+                    path={route.path}
+                    element={<Component />}
+                />
+            );
+        }
+
+        // Nested options
+        if (route.options?.length) {
+            route.options.forEach((option) => {
+                if (option.path && option.component) {
+                    const Component = option.component;
+
+                    routeElement.push(
+                        <Route
+                            key={option.path}
+                            path={option.path}
+                            element={<Component />}
+                        />
+                    );
+                }
+            });
+        }
+
+        return routeElement;
+    });
+};
 
 const AppRoutes = () => {
     return (
         <Routes>
+
             {/* Public Routes */}
             {publicRoutes.map(({ path, component: Component }) => (
                 <Route
@@ -20,26 +58,14 @@ const AppRoutes = () => {
             {/* User Routes */}
             <Route element={<ProtectedRoute allowedRoles={["user"]} />}>
                 <Route element={<DashboardLayout />}>
-                    {userRoutes.map(({ path, component: Component }) => (
-                        <Route
-                            key={path}
-                            path={path}
-                            element={<Component />}
-                        />
-                    ))}
+                    {renderRoutes(userRoutes)}
                 </Route>
             </Route>
 
             {/* Admin Routes */}
             <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
                 <Route element={<DashboardLayout />}>
-                    {adminRoutes.map(({ path, component: Component }) => (
-                        <Route
-                            key={path}
-                            path={path}
-                            element={<Component />}
-                        />
-                    ))}
+                    {renderRoutes(adminRoutes)}
                 </Route>
             </Route>
 
@@ -48,6 +74,7 @@ const AppRoutes = () => {
                 path="*"
                 element={<NotFound />}
             />
+
         </Routes>
     );
 };

@@ -1,22 +1,38 @@
+import {
+  LayoutDashboard,
+  Settings as SettingsIcon,
+  Users as UsersIcon,
+  FolderGit2,
+  FingerprintPattern,
+  ClipboardCheck,
+  HandCoins,
+} from "lucide-react";
+
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
-
-import UserDashboard from "../pages/user/UserDashboard";
-import Profile from "../pages/user/Profile";
-import Settings from "../pages/user/Settings";
-
-import AdminDashboard from "../pages/admin/AdminDashboard";
-import Users from "../pages/admin/Users";
+import AdminLogin from "../pages/auth/AdminLogin";
 
 import LandingPage from "../pages/LandingPage";
 
-import {
-  LayoutDashboard,
-  User,
-  Settings as SettingsIcon,
-  Users as UsersIcon,
-} from "lucide-react";
-import AdminLogin from "../pages/auth/AdminLogin";
+import UserDashboard from "../pages/user/UserDashboard";
+import UserProjects from "../pages/user/UserProjects";
+import UserDailyAttendance from "../pages/user/attendance/UserDailyAttendance";
+import UserMonthlyAttendance from "../pages/user/attendance/UserMonthlyAttendance";
+import UserTeamAttendance from "../pages/user/team/UserTeamAttendance";
+import UserTeamMembers from "../pages/user/team/UserTeamMembers";
+import UserTeamLeaves from "../pages/user/team/UserTeamLeaves";
+import UserTeamPerformance from "../pages/user/team/UserTeamPerformance";
+import UserTasks from "../pages/user/UserTasks";
+import UserPaySlip from "../pages/user/payroll/UserPaySlip";
+import UserSalaryDetails from "../pages/user/payroll/UserSalaryDetails";
+import UserMyDocuments from "../pages/user/documents/UserMyDocuments";
+import UserCompanyPolicies from "../pages/user/documents/UserCompanyPolicies";
+import UserProfileSettings from "../pages/user/settings/UserProfileSettings";
+import UserPasswordSettings from "../pages/user/settings/UserPasswordSettings";
+import UserNotificationSettings from "../pages/user/settings/UserNotificationSettings";
+
+import AdminDashboard from "../pages/admin/AdminDashboard";
+import Users from "../pages/admin/Users";
 
 export const publicRoutes = [
   {
@@ -44,30 +60,128 @@ export const userRoutes = [
     isSidebar: true,
     label: "Dashboard",
     icon: LayoutDashboard,
+    section: "Overview",
   },
   {
-    path: "/user/profile",
-    component: Profile,
     isSidebar: true,
-    label: "Profile",
-    icon: User,
+    label: "Attendance",
+    icon: FingerprintPattern,
+    section: "Overview",
+    options: [
+      {
+        path: "/user/daily-attendance",
+        component: UserDailyAttendance,
+        label: "Daily Attendance",
+      },
+      {
+        path: "/user/monthly-attendance",
+        component: UserMonthlyAttendance,
+        label: "Monthly Attendance",
+      },
+    ]
   },
   {
-    path: "/user/settings",
-    component: Settings,
+    isSidebar: true,
+    label: "Teams",
+    icon: UsersIcon,
+    section: "Overview",
+    options: [
+      {
+        path: "/user/team-members",
+        component: UserTeamMembers,
+        label: "Teams Members",
+      },
+      {
+        path: "/user/team-attendance",
+        component: UserTeamAttendance,
+        label: "Teams Attendance",
+      },
+      {
+        path: "/user/team-leaves",
+        component: UserTeamLeaves,
+        label: "Teams Leaves",
+      },
+      {
+        path: "/user/team-performance",
+        component: UserTeamPerformance,
+        label: "Teams Performance",
+      }
+    ],
+  },
+  {
+    path: "/user/projects",
+    component: UserProjects,
+    isSidebar: true,
+    label: "Projects",
+    icon: FolderGit2,
+    section: "Overview",
+  },
+  {
+    path: "/user/tasks",
+    component: UserTasks,
+    isSidebar: true,
+    label: "Tasks",
+    icon: ClipboardCheck,
+    section: "Overview",
+  },
+  {
+    isSidebar: true,
+    label: "Payroll",
+    icon: HandCoins,
+    section: "Overview",
+    options: [
+      {
+        path: "/user/salary-details",
+        component: UserSalaryDetails,
+        label: "Salary Details",
+      },
+      {
+        path: "/user/pay-slips",
+        component: UserPaySlip,
+        label: "Pay Slips",
+      },
+    ],
+  },
+  {
+    isSidebar: true,
+    label: "Documents",
+    icon: ClipboardCheck,
+    section: "Overview",
+    options: [
+      {
+        path: "/user/my-documents",
+        component: UserMyDocuments,
+        label: "My Documents",
+      },
+      {
+        path: "/user/company-policies",
+        component: UserCompanyPolicies,
+        label: "Company Policies",
+      },
+    ],
+  },
+  {
     isSidebar: true,
     label: "Settings",
     icon: SettingsIcon,
-    // options: [
-    //   {
-    //     label: "Option 1",
-    //     path: "/user/settings/option1",
-    //   },
-    //   {
-    //     label: "Option 2",
-    //     path: "/user/settings/option2",
-    //   },
-    // ],
+    section: "Settings",
+    options: [
+      {
+        path: "/user/profile-settings",
+        component: UserProfileSettings,
+        label: "Profile Settings",
+      },
+      {
+        path: "/user/password-settings",
+        component: UserPasswordSettings,
+        label: "Password & Security",
+      },
+      {
+        path: "/user/notification-settings",
+        component: UserNotificationSettings,
+        label: "Notification Settings",
+      },
+    ]
   },
 ];
 
@@ -78,6 +192,7 @@ export const adminRoutes = [
     isSidebar: true,
     label: "Dashboard",
     icon: LayoutDashboard,
+    section: "Overview",
   },
   {
     path: "/admin/users",
@@ -85,5 +200,6 @@ export const adminRoutes = [
     isSidebar: true,
     label: "Users",
     icon: UsersIcon,
+    section: "Business",
   },
 ];
