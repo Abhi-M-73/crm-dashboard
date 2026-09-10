@@ -139,17 +139,33 @@ const DashboardHeader = ({ sidebarOpen, setSidebarOpen }) => {
           top: `${dropdownPosition.top}px`,
           right: `${dropdownPosition.right}px`,
         }}
-        className="z-[999999] w-52 overflow-hidden rounded-2xl border border-stone-200 bg-white p-1.5 shadow-sm"
+        className="z-[999999] w-60 overflow-hidden rounded-2xl border border-stone-200 bg-white p-1.5 shadow-lg"
       >
         {/* USER INFO */}
-        <div className="border-b border-stone-100 px-3 py-2">
-          <p className="truncate text-xs font-bold text-stone-800">
-            {user?.username || "Claire Horington"}
-          </p>
+        <div className="flex items-center gap-3 border-b border-stone-100 px-3 py-3">
+          {/* Avatar */}
+          {user?.avatar ? (
+            <img
+              src={user.avatar}
+              alt={user?.username || "Avatar"}
+              className="h-12 w-12 shrink-0 rounded-full object-cover shadow-sm"
+            />
+          ) : (
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1E5642] text-md font-bold text-white shadow-sm">
+              {initials}
+            </div>
+          )}
 
-          <p className="truncate text-[10px] text-stone-400">
-            {user?.email || "store.admin@relationx.com"}
-          </p>
+          {/* User Details */}
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-sm font-bold text-stone-800">
+              {user?.username || "Claire Horington"}
+            </p>
+
+            <p className="truncate text-sm text-stone-400">
+              {user?.email || "store.admin@relationx.com"}
+            </p>
+          </div>
         </div>
 
         {/* PROFILE */}
@@ -157,37 +173,21 @@ const DashboardHeader = ({ sidebarOpen, setSidebarOpen }) => {
           type="button"
           onClick={() => {
             setProfileOpen(false);
-            navigate("/profile");
+            navigate("/user/profile-settings");
           }}
-          className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-stone-600 transition hover:bg-stone-50"
+          className="mt-1 flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-50"
         >
           <User size={14} />
-          My Profile
+          <span>My Profile</span>
         </button>
 
-        {/* SETTINGS */}
-        <button
-          type="button"
-          onClick={() => {
-            setProfileOpen(false);
-            navigate("/settings");
-          }}
-          className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-stone-600 transition hover:bg-stone-50"
-        >
-          <Settings size={14} />
-          Settings
-        </button>
-
-        <div className="my-1 h-px bg-stone-100" />
-
-        {/* LOGOUT */}
         <button
           type="button"
           onClick={handleLogout}
-          className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium text-red-500 transition hover:bg-red-50"
+          className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium text-red-500 transition-colors hover:bg-red-50"
         >
           <LogOut size={14} />
-          Log Out
+          <span>Log Out</span>
         </button>
       </div>,
       document.body
@@ -195,8 +195,8 @@ const DashboardHeader = ({ sidebarOpen, setSidebarOpen }) => {
 
   return (
     <>
-      <header className="w-full pt-3">
-        <div className="mx-auto flex h-16 w-full items-center justify-between gap-3 rounded-full border border-text/20 bg-white/80 px-4 shadow-sm backdrop-blur-md sm:px-6">
+      <header className="w-full pt-2">
+        <div className="mx-auto flex h-16 w-full items-center justify-between gap-3 rounded-full border border-stone-300 bg-white/80 px-4 shadow-sm backdrop-blur-md sm:px-6">
           <div
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="flex cursor-pointer items-center gap-3"
@@ -205,41 +205,17 @@ const DashboardHeader = ({ sidebarOpen, setSidebarOpen }) => {
               <span className="text-base font-bold leading-none">✤</span>
             </div>
 
-            <span className="text-xl font-bold tracking-tight text-stone-800">
+            <span className="text-2xl font-bold tracking-tight text-stone-800">
               RelationX
             </span>
           </div>
 
           {/* RIGHT ACTION ITEMS */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <div className="hidden items-center gap-2 rounded-full bg-[#F3EFEA] px-3.5 py-1.5 text-xs font-semibold text-stone-700 transition hover:bg-stone-200/70 sm:flex">
+            <div className="hidden items-center gap-2 rounded-full bg-[#F3EFEA] px-3.5 py-2 text-sm font-semibold text-stone-700 transition hover:bg-stone-200/70 sm:flex">
               <Calendar size={14} className="text-stone-500" />
               <span>{formattedDate}</span>
               <ChevronDown size={13} className="text-stone-400" />
-            </div>
-
-            <div className="relative flex items-center">
-              {searchOpen ? (
-                <div className="flex items-center gap-2 rounded-full bg-[#F3EFEA] px-3 py-1 text-xs">
-                  <Search size={14} className="text-stone-500" />
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    autoFocus
-                    onBlur={() => setSearchOpen(false)}
-                    className="w-28 bg-transparent text-xs text-stone-800 outline-none placeholder:text-stone-400 sm:w-44"
-                  />
-                </div>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setSearchOpen(true)}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F3EFEA] text-stone-600 transition hover:bg-stone-200"
-                  aria-label="Open search"
-                >
-                  <Search size={15} />
-                </button>
-              )}
             </div>
 
             {/* NOTIFICATION */}
@@ -267,27 +243,26 @@ const DashboardHeader = ({ sidebarOpen, setSidebarOpen }) => {
                   <img
                     src={user.avatar}
                     alt={user?.username || "Avatar"}
-                    className="h-8 w-8 rounded-full object-cover shadow-sm"
+                    className="h-10 w-10 rounded-full object-cover shadow-sm"
                   />
                 ) : (
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1E5642] text-xs font-bold text-white shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1E5642] text-sm font-bold text-white shadow-sm">
                     {initials}
                   </div>
                 )}
 
                 {/* USERNAME */}
                 <div className="hidden text-left sm:block">
-                  <p className="text-sm font-semibold leading-tight text-stone-800">
+                  <p className="text-md font-semibold leading-tight text-stone-800">
                     {user?.username || "Claire"}
                   </p>
                 </div>
 
                 {/* ARROW */}
                 <ChevronDown
-                  size={13}
-                  className={`text-stone-400 transition-transform duration-200 ${
-                    profileOpen ? "rotate-180" : ""
-                  }`}
+                  size={16}
+                  className={`text-stone-400 transition-transform duration-200 ${profileOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
             </div>

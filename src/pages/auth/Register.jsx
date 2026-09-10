@@ -50,7 +50,6 @@ const Register = () => {
 
   return (
     <div className="flex min-h-screen w-full items-center justify-center bg-[#F4EFEA] p-4 sm:p-6 lg:p-10 font-sans antialiased text-stone-800">
-      {/* Outer Floating Shell */}
       <div className="relative flex w-full max-w-[1180px] overflow-hidden rounded-[40px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.07)] border border-stone-200/80 min-h-[640px] p-3">
         
         {/* ================= LEFT CURVED SLANTED SHOWCASE ================= */}
@@ -68,18 +67,18 @@ const Register = () => {
 
           {/* Left Top Brand Navigation */}
           <div className="relative z-10 flex items-center justify-between pr-8">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-stone-200">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" />
+            <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase text-stone-200">
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
               RelationX Studio
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-xs text-stone-300 font-medium cursor-pointer hover:text-white transition">
+              <span className="text-sm text-stone-300 font-medium cursor-pointer hover:text-white transition">
                 Selected Works
               </span>
               <Link
                 to="/login"
-                className="rounded-full border border-white/25 px-4 py-1 text-xs font-medium backdrop-blur-md transition hover:bg-white/10"
+                className="rounded-full border border-white/25 px-4 py-1 text-sm font-medium backdrop-blur-md transition hover:bg-white/10"
               >
                 Sign In
               </Link>
@@ -94,7 +93,7 @@ const Register = () => {
             <h3 className="text-2xl font-extrabold tracking-tight leading-snug">
               Begin Your Journey With RelationX Team.
             </h3>
-            <p className="text-xs text-stone-300 leading-relaxed">
+            <p className="text-sm text-stone-300 leading-relaxed">
               Join thousands of creators managing collaborative sprints, attendance, and deliverables.
             </p>
           </div> */}
@@ -108,7 +107,7 @@ const Register = () => {
                 className="h-10 w-10 rounded-full border-2 border-white/40 object-cover shadow-sm"
               />
               <div>
-                <p className="text-xs font-bold leading-none text-white">Jordan Lee</p>
+                <p className="text-sm font-bold leading-none text-white">Jordan Lee</p>
                 <span className="text-[11px] text-stone-300">Staff UI Engineer</span>
               </div>
             </div>
@@ -138,22 +137,13 @@ const Register = () => {
           {/* Header Brand Bar */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1E5642] text-white shadow-sm">
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--secondary)] text-white shadow-sm">
                 <span className="text-sm font-bold leading-none">✤</span>
               </div>
               <span className="text-base font-bold tracking-tight text-stone-900">
                 RelationX
               </span>
             </div>
-
-            <button
-              type="button"
-              className="flex items-center gap-1.5 rounded-full border border-stone-200 bg-[#F9F6F0] px-3 py-1 text-xs font-semibold text-stone-600 hover:bg-stone-200/60 transition"
-            >
-              <Globe size={13} className="text-stone-400" />
-              <span>EN</span>
-              <ChevronDown size={12} className="text-stone-400" />
-            </button>
           </div>
 
           {/* Form Content */}
@@ -268,7 +258,7 @@ const Register = () => {
               {/* Submit CTA */}
               <button
                 type="submit"
-                className="mt-1 w-full rounded-2xl bg-[#EA580C] py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#d94e07] active:scale-[0.99]"
+                className="mt-1 w-full rounded-2xl bg-[var(--primary)] py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--primary)]/80 active:scale-[0.99]"
               >
                 Create Account
               </button>
@@ -276,7 +266,7 @@ const Register = () => {
 
             <p className="mt-3.5 text-center text-sm text-stone-400">
               Already have an account?{" "}
-              <Link to="/login" className="font-bold text-[#EA580C] hover:underline">
+              <Link to="/login" className="font-bold text-[var(--primary)] hover:underline">
                 Login
               </Link>
             </p>

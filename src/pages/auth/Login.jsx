@@ -66,7 +66,6 @@ const Login = () => {
         <div 
           className="relative hidden lg:flex w-[55%] flex-col justify-between p-8 text-white z-10 rounded-[40px] overflow-hidden"
           style={{
-            // Top width 100% hai, aur bottom curve hoke 82% par aakar cut hoti hai
             clipPath: "polygon(0 0, 96% 0, 89% 100%, 0 100%)",
             backgroundImage: `url(https://i.pinimg.com/736x/52/8e/5a/528e5a559c0645f8e09441dc3a251962.jpg)`,
             backgroundSize: "cover",
@@ -78,18 +77,18 @@ const Login = () => {
 
           {/* Left Top Brand Navigation */}
           <div className="relative z-10 flex items-center justify-between pr-8">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-stone-200">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" />
-              RelationX Studio
+            <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase text-stone-200">
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
+              CRM
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="text-xs text-stone-300 font-medium cursor-pointer hover:text-white transition">
+              <span className="text-sm text-stone-300 font-medium cursor-pointer hover:text-white transition">
                 Selected Works
               </span>
               <Link
                 to="/register"
-                className="rounded-full border border-white/25 px-4 py-1 text-xs font-medium backdrop-blur-md transition hover:bg-white/10"
+                className="rounded-full border border-white/25 px-4 py-1 text-sm font-medium backdrop-blur-md transition hover:bg-white/10"
               >
                 Join Us
               </Link>
@@ -104,7 +103,7 @@ const Login = () => {
             <h3 className="text-2xl font-extrabold tracking-tight leading-snug">
               Smart Workspace for High-Performing Teams.
             </h3>
-            <p className="text-xs text-stone-300 leading-relaxed">
+            <p className="text-sm text-stone-300 leading-relaxed">
               Track attendance, sprint workloads, and daily project milestones effortlessly.
             </p>
           </div> */}
@@ -118,7 +117,7 @@ const Login = () => {
                 className="h-10 w-10 rounded-full border-2 border-white/40 object-cover shadow-sm"
               />
               <div>
-                <p className="text-xs font-bold leading-none text-white">Claire Horington</p>
+                <p className="text-sm font-bold leading-none text-white">Claire Horington</p>
                 <span className="text-[11px] text-stone-300">Lead Design Pod</span>
               </div>
             </div>
@@ -149,22 +148,13 @@ const Login = () => {
           {/* Top Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1E5642] text-white shadow-sm">
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--secondary)] text-white shadow-sm">
                 <span className="text-sm font-bold leading-none">✤</span>
               </div>
               <span className="text-base font-bold tracking-tight text-stone-900">
                 RelationX
               </span>
             </div>
-
-            <button
-              type="button"
-              className="flex items-center gap-1.5 rounded-full border border-stone-200 bg-[#F9F6F0] px-3 py-1 text-xs font-semibold text-stone-600 hover:bg-stone-200/60 transition"
-            >
-              <Globe size={13} className="text-stone-400" />
-              <span>EN</span>
-              <ChevronDown size={12} className="text-stone-400" />
-            </button>
           </div>
 
           {/* Form Content */}
@@ -173,7 +163,7 @@ const Login = () => {
               <h2 className="text-3xl font-black tracking-tight text-stone-900">
                 Hi Designer
               </h2>
-              <p className="mt-1 text-xs font-medium text-stone-400">
+              <p className="mt-1 text-sm font-medium text-stone-400">
                 Welcome to RelationX Workspace
               </p>
             </div>
@@ -191,7 +181,7 @@ const Login = () => {
                   onChange={handleInputChange}
                   placeholder="Email"
                   required
-                  className="w-full rounded-2xl border border-stone-200 bg-white py-3 pl-10 pr-4 text-xs font-medium text-stone-800 placeholder-stone-400 shadow-sm transition focus:border-[#EA580C] focus:outline-none focus:ring-2 focus:ring-[#EA580C]/10"
+                  className="w-full rounded-2xl border border-stone-200 bg-white py-3 pl-10 pr-4 text-sm font-medium text-stone-800 placeholder-stone-400 shadow-sm transition focus:border-[#EA580C] focus:outline-none focus:ring-2 focus:ring-[#EA580C]/10"
                 />
               </div>
 
@@ -207,7 +197,7 @@ const Login = () => {
                   onChange={handleInputChange}
                   placeholder="Password"
                   required
-                  className="w-full rounded-2xl border border-stone-200 bg-white py-3 pl-10 pr-4 text-xs font-medium text-stone-800 placeholder-stone-400 shadow-sm transition focus:border-[#EA580C] focus:outline-none focus:ring-2 focus:ring-[#EA580C]/10"
+                  className="w-full rounded-2xl border border-stone-200 bg-white py-3 pl-10 pr-4 text-sm font-medium text-stone-800 placeholder-stone-400 shadow-sm transition focus:border-[#EA580C] focus:outline-none focus:ring-2 focus:ring-[#EA580C]/10"
                 />
               </div>
 
@@ -215,7 +205,7 @@ const Login = () => {
               <div className="flex justify-end pt-0.5">
                 <Link
                   to="/forgot-password"
-                  className="text-[11px] font-semibold text-stone-400 transition hover:text-[#EA580C] hover:underline"
+                  className="text-[11px] font-semibold text-stone-400 transition hover:text-[var(--primary)] hover:underline"
                 >
                   Forgot password?
                 </Link>
@@ -231,7 +221,7 @@ const Login = () => {
               {/* Google Button */}
               <button
                 type="button"
-                className="flex w-full items-center justify-center gap-2 rounded-2xl border border-stone-200 bg-white py-2.5 text-xs font-bold text-stone-700 shadow-sm transition hover:bg-stone-50"
+                className="flex w-full items-center justify-center gap-2 rounded-2xl border border-stone-200 bg-white py-2.5 text-sm font-bold text-stone-700 shadow-sm transition hover:bg-stone-50"
               >
                 <span>Login with Google</span>
                 <svg className="h-4 w-4" viewBox="0 0 24 24">
@@ -257,15 +247,15 @@ const Login = () => {
               {/* Login Button */}
               <button
                 type="submit"
-                className="mt-2 w-full rounded-2xl bg-[#EA580C] py-3 text-xs font-bold text-white shadow-sm transition hover:bg-[#d94e07] active:scale-[0.99]"
+                className="mt-2 w-full rounded-2xl bg-[var(--primary)] py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--primary)]/80 active:scale-[0.99]"
               >
                 Login
               </button>
             </form>
 
-            <p className="mt-4 text-center text-xs text-stone-400">
+            <p className="mt-4 text-center text-sm text-stone-400">
               Don't have an account?{" "}
-              <Link to="/register" className="font-bold text-[#EA580C] hover:underline">
+              <Link to="/register" className="font-bold text-[var(--primary)] hover:underline">
                 Sign up
               </Link>
             </p>

@@ -6,6 +6,7 @@ import {
   FingerprintPattern,
   ClipboardCheck,
   HandCoins,
+  PhoneCall,
 } from "lucide-react";
 
 import Login from "../pages/auth/Login";
@@ -33,6 +34,7 @@ import UserNotificationSettings from "../pages/user/settings/UserNotificationSet
 
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import Users from "../pages/admin/Users";
+import UserContacts from "../pages/user/UserContacts";
 
 export const publicRoutes = [
   {
@@ -159,6 +161,14 @@ export const userRoutes = [
         label: "Company Policies",
       },
     ],
+  },
+  {
+    path: "/user/contacts",
+    component: UserContacts,
+    isSidebar: true,
+    label: "Contacts",
+    icon: PhoneCall,
+    section: "Overview",
   },
   {
     isSidebar: true,

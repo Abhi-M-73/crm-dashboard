@@ -9,121 +9,160 @@ import {
 } from "lucide-react";
 import { logout } from "../redux/slices/authSlice";
 import { adminRoutes, userRoutes } from "../routes/routes";
+import { useState } from "react";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [openMenus, setOpenMenus] = useState({});
+
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
   };
 
-  // Admin / User routes dynamically select honge
   const isAdmin = location.pathname.startsWith("/admin");
   const currentRoutes = isAdmin ? adminRoutes : userRoutes;
 
-  // Sirf sidebar wale routes
   const sidebarRoutes = currentRoutes.filter(
     (route) => route.isSidebar === true
   );
 
-  // Overview
   const overviewMenu = sidebarRoutes.filter(
     (item) => (item.section || "Overview").toLowerCase() === "overview"
   );
 
-  // Business
-  const businessMenu = sidebarRoutes.filter(
-    (item) => (item.section || "Overview").toLowerCase() === "business"
+  const settingsMenu = sidebarRoutes.filter(
+    (item) => (item.section || "Settings").toLowerCase() === "settings"
   );
-
-  // Check nested route active hai ya nahi
-  const hasActiveOption = (item) => {
-    return item.options?.some((option) =>
-      location.pathname.startsWith(option.path)
-    );
-  };
 
   const renderNavGroup = (items) => (
     <ul className="space-y-2">
       {items.map((item) => {
         const Icon = item.icon;
-        const nestedActive = hasActiveOption(item);
+        const hasOptions = item.options?.length > 0;
 
-        return (
-          <li key={item.path} className="relative">
-            <NavLink
-              to={item.path}
-              title={!sidebarOpen ? item.label : undefined}
-              onClick={() => {
-                // Mobile par route click hone ke baad sidebar close
-                if (window.innerWidth < 1024) {
-                  setSidebarOpen(false);
-                }
-              }}
-              className={({ isActive }) => `
-                group relative flex items-center py-2.5 text-[13px]
+        const isChildActive = hasOptions
+          ? item.options.some((option) => location.pathname === option.path)
+          : false;
+
+        const isOpen = openMenus[item.label] || isChildActive;
+
+        // Normal route
+        if (!hasOptions) {
+          return (
+            <li key={item.path || item.label} className="relative">
+              <NavLink
+                to={item.path}
+                onClick={() => {
+                  if (window.innerWidth < 1024) {
+                    setSidebarOpen(false);
+                  }
+                }}
+                title={!sidebarOpen ? item.label : undefined}
+                className={({ isActive }) => `
+                group relative flex items-center py-2 text-sm
                 font-medium transition-all duration-200 rounded-2xl
-                ${sidebarOpen
-                  ? "px-4 gap-3.5"
-                  : "justify-center px-0"
-                }
-                ${isActive || nestedActive
-                  ? "text-[#F97316] font-semibold bg-orange-50/60"
+                ${sidebarOpen ? "px-4 gap-3.5" : "justify-center px-0"}
+                ${isActive
+                    ? "text-[var(--primary)] font-semibold bg-orange-50/60"
+                    : "text-stone-600 hover:text-stone-900 hover:bg-stone-100/60"
+                  }
+              `}
+              >
+                {({ isActive }) => (
+                  <>
+                    {isActive && (
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-[var(--primary)] rounded-r-full shadow-sm" />
+                    )}
+
+                    <Icon
+                      size={20}
+                      strokeWidth={isActive ? 2.2 : 1.8}
+                      className={`
+                      transition-transform duration-150 shrink-0
+                      ${isActive
+                          ? "text-[var(--primary)]"
+                          : "text-stone-700 group-hover:text-stone-950"
+                        }
+                    `}
+                    />
+
+                    {sidebarOpen && (
+                      <span className="tracking-tight truncate">
+                        {item.label}
+                      </span>
+                    )}
+                  </>
+                )}
+              </NavLink>
+            </li>
+          );
+        }
+
+        // Nested route
+        return (
+          <li key={item.label} className="relative">
+            <button
+              type="button"
+              onClick={() => {
+                setOpenMenus((prev) => ({
+                  ...prev,
+                  [item.label]: !prev[item.label],
+                }));
+              }}
+              title={!sidebarOpen ? item.label : undefined}
+              className={`
+              group relative w-full flex items-center py-2
+              text-sm font-medium transition-all duration-200 rounded-2xl
+              ${sidebarOpen ? "px-4 gap-3.5" : "justify-center px-0"}
+              ${isChildActive
+                  ? "text-[var(--primary)] font-semibold bg-orange-50/60"
                   : "text-stone-600 hover:text-stone-900 hover:bg-stone-100/60"
                 }
-              `}
+            `}
             >
-              {({ isActive }) => (
+              {isChildActive && (
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-[var(--primary)] rounded-r-full shadow-sm" />
+              )}
+
+              <Icon
+                size={20}
+                strokeWidth={isChildActive ? 2.2 : 1.8}
+                className={`
+                shrink-0
+                ${isChildActive
+                    ? "text-[var(--primary)]"
+                    : "text-stone-700 group-hover:text-stone-950"
+                  }
+              `}
+              />
+
+              {sidebarOpen && (
                 <>
-                  {(isActive || nestedActive) && (
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-[#F97316] rounded-r-full shadow-sm" />
-                  )}
+                  <span className="tracking-tight truncate flex-1 text-left">
+                    {item.label}
+                  </span>
 
-                  <Icon
-                    size={20}
-                    strokeWidth={
-                      isActive || nestedActive ? 2.2 : 1.8
-                    }
+                  <ChevronRight
+                    size={15}
                     className={`
-                      transition-transform duration-150 shrink-0
-                      ${isActive || nestedActive
-                        ? "text-[#F97316]"
-                        : "text-stone-700 group-hover:text-stone-950"
-                      }
-                    `}
+                    transition-transform duration-200
+                    ${isOpen ? "rotate-90" : ""}
+                  `}
                   />
-
-                  {sidebarOpen && (
-                    <span className="tracking-tight truncate flex-1">
-                      {item.label}
-                    </span>
-                  )}
-
-                  {/* Nested route indicator */}
-                  {sidebarOpen && item.options?.length > 0 && (
-                    <ChevronDown
-                      size={15}
-                      className={`
-                        text-stone-400 transition-transform duration-200
-                        ${nestedActive
-                          ? "rotate-180 text-[#F97316]"
-                          : ""
-                        }
-                      `}
-                    />
-                  )}
                 </>
               )}
-            </NavLink>
+            </button>
 
-            {/* ================= NESTED ROUTES ================= */}
-            {sidebarOpen && item.options?.length > 0 && (
-              <ul className="ml-3 mt-1 space-y-1 border-l border-stone-200 pl-3">
+            {/* Nested Options */}
+            {hasOptions && sidebarOpen && isOpen && (
+              <ul className="mt-1 ml-7 space-y-1 border-l border-stone-200 pl-3">
                 {item.options.map((option) => {
-                  console.log("Rendering option:", option); // Debugging line
+                  const OptionIcon = option.icon;
+
                   return (
                     <li key={option.path}>
                       <NavLink
@@ -134,14 +173,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                           }
                         }}
                         className={({ isActive }) => `
-                          flex items-center gap-2.5 rounded-xl
-                          px-3 py-2 text-[12px] transition-all
-                          ${isActive
-                            ? "bg-orange-50/70 text-[#F97316] font-semibold"
-                            : "text-stone-500 hover:bg-stone-100/60 hover:text-stone-800"
+                        flex items-center gap-2.5 rounded-xl px-3 py-2
+                        text-sm font-medium transition-all
+                        ${isActive
+                            ? "text-[var(--primary)] bg-orange-50/60 font-semibold"
+                            : "text-stone-500 hover:text-stone-800 hover:bg-stone-100/60"
                           }
-                        `}
+                      `}
                       >
+                        {OptionIcon && (
+                          <OptionIcon size={15} strokeWidth={1.8} />
+                        )}
+
                         <span className="truncate">
                           {option.label}
                         </span>
@@ -176,7 +219,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       <aside
         className={`
           fixed lg:static top-0 bottom-0 left-0 z-50
-          select-none transition-all duration-300 ease-in-out p-3
+          select-none transition-all duration-300 ease-in-out p-2
 
           ${sidebarOpen
             ? "translate-x-0"
@@ -197,6 +240,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
             py-5 px-3
             flex flex-col justify-between
             overflow-hidden
+          no-scrollbar
           "
         >
           <div>
@@ -212,7 +256,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               `}
             >
               {sidebarOpen && (
-                <span className="text-xs font-bold uppercase tracking-wider text-stone-400">
+                <span className="text-sm font-bold uppercase tracking-wider text-stone-400">
                   Menu
                 </span>
               )}
@@ -272,7 +316,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   {sidebarOpen && (
                     <h4
                       className="
-                        px-3 text-[11px] font-bold
+                        px-3 text-sm font-bold
                         uppercase tracking-wider
                         text-stone-400 mb-2.5
                       "
@@ -286,21 +330,21 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               )}
 
               {/* ================= BUSINESS ================= */}
-              {businessMenu.length > 0 && (
+              {settingsMenu.length > 0 && (
                 <div>
                   {sidebarOpen && (
                     <h4
                       className="
-                        px-3 text-[11px] font-bold
+                        px-3 text-sm font-bold
                         uppercase tracking-wider
                         text-stone-400 mb-2.5
                       "
                     >
-                      Business
+                      Settings
                     </h4>
                   )}
 
-                  {renderNavGroup(businessMenu)}
+                  {renderNavGroup(settingsMenu)}
                 </div>
               )}
             </div>
@@ -315,7 +359,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               className={`
                 w-full flex items-center py-2.5
                 text-[13px] font-semibold
-                text-[#F97316]
+                text-[var(--primary)]
                 hover:bg-orange-50/70
                 rounded-2xl transition-colors
 

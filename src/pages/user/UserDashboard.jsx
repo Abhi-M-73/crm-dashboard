@@ -51,10 +51,10 @@ const UserDashboard = () => {
                 
                 <div className="flex items-center gap-5 text-xs font-medium">
                   <span className="flex items-center gap-1.5 text-stone-700">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#1A533E]" /> Actual Hours
+                    <span className="w-2.5 h-2.5 rounded-full bg-[var(--secondary)]" /> Actual Hours
                   </span>
                   <span className="flex items-center gap-1.5 text-stone-700">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#F97316]" /> Target Hours
+                    <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary)]" /> Target Hours
                   </span>
                   
                   <div className="flex items-center gap-1 border border-stone-200 px-2.5 py-1 rounded-full text-[11px] text-stone-500 bg-stone-50 cursor-pointer">
@@ -189,13 +189,13 @@ const UserDashboard = () => {
                 <div className="flex items-center justify-around text-center pt-2">
                   <div>
                     <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-stone-800">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#1A533E]" /> 21 Days
+                      <span className="w-2.5 h-2.5 rounded-full bg-[var(--secondary)]" /> 21 Days
                     </div>
                     <span className="text-[10px] text-stone-400">Present (On Time)</span>
                   </div>
                   <div>
                     <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-stone-800">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#F97316]" /> 01 Day
+                      <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary)]" /> 01 Day
                     </div>
                     <span className="text-[10px] text-stone-400">Approved Leave</span>
                   </div>
@@ -214,7 +214,7 @@ const UserDashboard = () => {
                 <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[#EA580C]">
+                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[var(--primary)]">
                         <CheckCircle2 size={19} />
                       </div>
                       <div>
@@ -229,7 +229,7 @@ const UserDashboard = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[#EA580C]">
+                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[var(--primary)]">
                         <Timer size={19} />
                       </div>
                       <div>
@@ -244,7 +244,7 @@ const UserDashboard = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[#EA580C]">
+                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[var(--primary)]">
                         <AlertCircle size={19} />
                       </div>
                       <div>
@@ -290,7 +290,7 @@ const UserDashboard = () => {
                   <tbody className="divide-y divide-stone-50">
                     <tr className="hover:bg-stone-50/50">
                       <td className="py-3 font-semibold text-stone-800 flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-lg bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-lg bg-[#E1EBE6] text-[var(--secondary)] flex items-center justify-center">
                           <FolderGit2 size={13} />
                         </div>
                         Fintech Mobile App
@@ -312,7 +312,7 @@ const UserDashboard = () => {
 
                     <tr className="hover:bg-stone-50/50">
                       <td className="py-3 font-semibold text-stone-800 flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-lg bg-[#FFEDD5] text-[#EA580C] flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-lg bg-[#FFEDD5] text-[var(--primary)] flex items-center justify-center">
                           <FolderGit2 size={13} />
                         </div>
                         CRM Cloud Redesign
@@ -324,7 +324,7 @@ const UserDashboard = () => {
                       </td>
                       <td className="py-3">
                         <div className="w-24 bg-stone-100 h-2 rounded-full overflow-hidden">
-                          <div className="bg-[#EA580C] h-full rounded-full" style={{ width: '45%' }} />
+                          <div className="bg-[var(--primary)] h-full rounded-full" style={{ width: '45%' }} />
                         </div>
                       </td>
                       <td className="py-3 text-right text-stone-400">
@@ -346,15 +346,7 @@ const UserDashboard = () => {
               <div className="flex items-center justify-between">
                 <h3 className="font-bold text-stone-800 text-base">Employee Profile</h3>
                 <div className="flex items-center gap-2">
-                  <div className="relative">
-                    <button className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-stone-600 hover:bg-stone-200">
-                      <Bell size={15} />
-                    </button>
-                    <span className="absolute -top-1 -right-1 bg-red-600 text-[9px] font-bold text-white rounded-full w-4 h-4 flex items-center justify-center">
-                      4
-                    </span>
-                  </div>
-                  <button className="w-8 h-8 rounded-full bg-[#EA580C] text-white flex items-center justify-center hover:bg-orange-600 transition">
+                  <button className="w-8 h-8 rounded-full bg-[var(--primary)] text-white flex items-center justify-center hover:bg-[var(--primary)]/80 transition">
                     <Settings size={15} />
                   </button>
                 </div>
@@ -384,10 +376,10 @@ const UserDashboard = () => {
                   <span className="text-stone-400 font-medium">8/10</span>
                 </div>
                 <div className="grid grid-cols-5 gap-1.5">
-                  <div className="h-2 rounded-full bg-[#EA580C]" />
-                  <div className="h-2 rounded-full bg-[#EA580C]" />
-                  <div className="h-2 rounded-full bg-[#EA580C]" />
-                  <div className="h-2 rounded-full bg-[#EA580C]" />
+                  <div className="h-2 rounded-full bg-[var(--primary)]" />
+                  <div className="h-2 rounded-full bg-[var(--primary)]" />
+                  <div className="h-2 rounded-full bg-[var(--primary)]" />
+                  <div className="h-2 rounded-full bg-[var(--primary)]" />
                   <div className="h-2 rounded-full bg-stone-200" />
                 </div>
               </div>
@@ -395,7 +387,7 @@ const UserDashboard = () => {
               {/* 3 Metric Pills */}
               <div className="grid grid-cols-3 gap-3 text-center">
                 <div className="p-2.5 rounded-2xl bg-[#F8F6F2] flex flex-col items-center">
-                  <div className="w-8 h-8 rounded-full bg-[#1E5642] text-white flex items-center justify-center mb-1.5">
+                  <div className="w-8 h-8 rounded-full bg-[var(--secondary)] text-white flex items-center justify-center mb-1.5">
                     <Briefcase size={14} />
                   </div>
                   <span className="text-sm font-extrabold text-stone-800">4</span>
@@ -403,7 +395,7 @@ const UserDashboard = () => {
                 </div>
 
                 <div className="p-2.5 rounded-2xl bg-[#F8F6F2] flex flex-col items-center">
-                  <div className="w-8 h-8 rounded-full bg-[#1E5642] text-white flex items-center justify-center mb-1.5">
+                  <div className="w-8 h-8 rounded-full bg-[var(--secondary)] text-white flex items-center justify-center mb-1.5">
                     <Clock size={14} />
                   </div>
                   <span className="text-sm font-extrabold text-stone-800">14d</span>
@@ -411,7 +403,7 @@ const UserDashboard = () => {
                 </div>
 
                 <div className="p-2.5 rounded-2xl bg-[#F8F6F2] flex flex-col items-center">
-                  <div className="w-8 h-8 rounded-full bg-[#1E5642] text-white flex items-center justify-center mb-1.5">
+                  <div className="w-8 h-8 rounded-full bg-[var(--secondary)] text-white flex items-center justify-center mb-1.5">
                     <Award size={14} />
                   </div>
                   <span className="text-sm font-extrabold text-stone-800">9.4</span>
@@ -420,7 +412,7 @@ const UserDashboard = () => {
               </div>
 
               {/* View / Edit Button */}
-              <button className="w-full py-3 bg-[#EA580C] hover:bg-[#d94e07] text-white text-xs font-semibold rounded-2xl flex items-center justify-center gap-2 shadow-sm transition">
+              <button className="w-full py-3 bg-[var(--primary)] hover:bg-[var(--primary)]/80 text-white text-xs font-semibold rounded-2xl flex items-center justify-center gap-2 shadow-sm transition">
                 <Edit3 size={14} /> Request Leave / Update Status
               </button>
             </div>
