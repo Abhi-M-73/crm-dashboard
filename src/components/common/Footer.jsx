@@ -1,35 +1,43 @@
-import {
-  // Twitter,
-  // Linkedin,
-  // Github,
-  // Instagram,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const columns = [
   {
     title: "Product",
-    links: ["Features", "Integrations", "Pricing", "Changelog"],
+    links: [
+      { label: "Attendance Tracker", href: "#features" },
+      { label: "Payroll Engine", href: "#features" },
+      { label: "Leave Approvals", href: "#automation" },
+      { label: "Workforce Analytics", href: "#insights" },
+    ],
   },
   {
-    title: "Company",
-    links: ["About Us", "Careers", "Blog", "Contact"],
+    title: "Solutions",
+    links: [
+      { label: "Hybrid Teams", href: "#features" },
+      { label: "High-Growth Startups", href: "#features" },
+      { label: "Multi-Branch Retail", href: "#features" },
+      { label: "Shift Scheduling", href: "#automation" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Documentation", "Help Center", "API Reference", "Community"],
+    links: [
+      { label: "Compliance Guide", href: "#" },
+      { label: "Payslip Generator", href: "#" },
+      { label: "Help Center", href: "#" },
+      { label: "API Documentation", href: "#" },
+    ],
   },
   {
-    title: "Legal",
-    links: ["Privacy Policy", "Terms of Service", "Security", "Cookies"],
+    title: "Company",
+    links: [
+      { label: "About Us", href: "#" },
+      { label: "Customer Stories", href: "#testimonials" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Service", href: "#" },
+    ],
   },
-];
-
-const socials = [
-  // { icon: Twitter, label: "Twitter" },
-  // { icon: Linkedin, label: "LinkedIn" },
-  // { icon: Github, label: "GitHub" },
-  // { icon: Instagram, label: "Instagram" },
 ];
 
 export default function Footer() {
@@ -37,22 +45,22 @@ export default function Footer() {
     <footer className="bg-slate-950 px-6 pt-16 sm:px-10">
       <div className="mx-auto max-w-6xl">
         {/* CTA bar */}
-        <div className="flex flex-col items-center justify-between gap-6 rounded-3xl border border-white/10 bg-gradient-to-r from-indigo-600/20 to-violet-600/20 p-8 sm:flex-row sm:p-10">
+        <div className="flex flex-col items-center justify-between gap-6 rounded-3xl border border-white/10 bg-gradient-to-r from-indigo-600/20 to-violet-600/20 p-8 sm:flex-row sm:p-10 backdrop-blur-md">
           <div>
             <h3 className="text-xl font-bold text-white sm:text-2xl">
-              Ready to grow faster?
+              Ready to scale your workforce?
             </h3>
             <p className="mt-2 text-sm text-slate-400">
               Start your free 14-day trial — no credit card required.
             </p>
           </div>
-          <a
-            href="#signup"
-            className="group flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5"
+          <Link
+            to="/register"
+            className="group flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 shadow-lg"
           >
             Get Started
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
 
         {/* Links grid */}
@@ -62,11 +70,10 @@ export default function Footer() {
               <span className="flex h-6 w-6 rotate-45 items-center justify-center rounded-md bg-white/90">
                 <span className="-rotate-45 text-sm font-bold text-indigo-600">◆</span>
               </span>
-              <span className="text-lg font-semibold tracking-tight">SaaSipv</span>
+              <span className="text-lg font-semibold tracking-tight">StaffSync CRM</span>
             </div>
             <p className="mt-4 max-w-[220px] text-sm leading-relaxed text-slate-400">
-              The all-in-one platform to automate your workflow and grow
-              faster.
+              The all-in-one workforce CRM to automate attendance, payroll, and employee operations.
             </p>
           </div>
 
@@ -75,12 +82,12 @@ export default function Footer() {
               <p className="text-sm font-semibold text-white">{title}</p>
               <ul className="mt-4 space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-sm text-slate-400 transition hover:text-white"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -92,19 +99,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
           <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} SaaSipv. All rights reserved.
+            © {new Date().getFullYear()} StaffSync CRM Systems, Inc. All rights reserved.
           </p>
-          <div className="flex items-center gap-3">
-            {socials.map(({ icon: Icon, label }) => (
-              <a
-                key={label}
-                href="#"
-                aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-400 transition hover:border-white/30 hover:text-white"
-              >
-                <Icon size={15} />
-              </a>
-            ))}
+          <div className="flex items-center gap-4 text-xs text-slate-500">
+            <span>Built for high-performance workforce teams</span>
           </div>
         </div>
       </div>
