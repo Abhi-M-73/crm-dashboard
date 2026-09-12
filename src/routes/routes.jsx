@@ -7,6 +7,10 @@ import {
   ClipboardCheck,
   HandCoins,
   PhoneCall,
+  Clock,
+  CalendarDays,
+  Wallet,
+  FileText,
 } from "lucide-react";
 
 import Login from "../pages/auth/Login";
@@ -34,6 +38,12 @@ import UserNotificationSettings from "../pages/user/settings/UserNotificationSet
 
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import Users from "../pages/admin/Users";
+import AdminAttendance from "../pages/admin/AdminAttendance";
+import AdminLeaves from "../pages/admin/AdminLeaves";
+import AdminPayroll from "../pages/admin/AdminPayroll";
+import AdminProjects from "../pages/admin/AdminProjects";
+import AdminDocuments from "../pages/admin/AdminDocuments";
+import AdminSettings from "../pages/admin/AdminSettings";
 import UserContacts from "../pages/user/UserContacts";
 
 export const publicRoutes = [
@@ -208,8 +218,56 @@ export const adminRoutes = [
     path: "/admin/users",
     component: Users,
     isSidebar: true,
-    label: "Users",
+    label: "Employees",
     icon: UsersIcon,
-    section: "Business",
+    section: "Overview",
+  },
+  {
+    path: "/admin/attendance",
+    component: AdminAttendance,
+    isSidebar: true,
+    label: "Attendance",
+    icon: Clock,
+    section: "Overview",
+  },
+  {
+    path: "/admin/leaves",
+    component: AdminLeaves,
+    isSidebar: true,
+    label: "Leaves",
+    icon: CalendarDays,
+    section: "Overview",
+  },
+  {
+    path: "/admin/projects",
+    component: AdminProjects,
+    isSidebar: true,
+    label: "Projects",
+    icon: FolderGit2,
+    section: "Overview",
+  },
+  {
+    path: "/admin/payroll",
+    component: AdminPayroll,
+    isSidebar: true,
+    label: "Payroll",
+    icon: Wallet,
+    section: "Overview",
+  },
+  {
+    path: "/admin/documents",
+    component: AdminDocuments,
+    isSidebar: true,
+    label: "Documents",
+    icon: FileText,
+    section: "Overview",
+  },
+  {
+    path: "/admin/settings",
+    component: AdminSettings,
+    isSidebar: true,
+    label: "Settings",
+    icon: SettingsIcon,
+    section: "Settings",
   },
 ];

@@ -30,12 +30,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     (route) => route.isSidebar === true
   );
 
-  const overviewMenu = sidebarRoutes.filter(
-    (item) => (item.section || "Overview").toLowerCase() === "overview"
-  );
-
-  const settingsMenu = sidebarRoutes.filter(
-    (item) => (item.section || "Settings").toLowerCase() === "settings"
+  const sectionNames = Array.from(
+    new Set(sidebarRoutes.map((item) => item.section || "Overview"))
   );
 
   const renderNavGroup = (items) => (
@@ -310,43 +306,30 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 max-h-[calc(100vh-180px)]
               "
             >
-              {/* ================= OVERVIEW ================= */}
-              {overviewMenu.length > 0 && (
-                <div>
-                  {sidebarOpen && (
-                    <h4
-                      className="
-                        px-3 text-sm font-bold
-                        uppercase tracking-wider
-                        text-stone-400 mb-2.5
-                      "
-                    >
-                      Overview
-                    </h4>
-                  )}
+              {sectionNames.map((sectionName) => {
+                const sectionItems = sidebarRoutes.filter(
+                  (item) => (item.section || "Overview") === sectionName
+                );
+                if (sectionItems.length === 0) return null;
 
-                  {renderNavGroup(overviewMenu)}
-                </div>
-              )}
+                return (
+                  <div key={sectionName}>
+                    {sidebarOpen && (
+                      <h4
+                        className="
+                          px-3 text-xs font-bold
+                          uppercase tracking-wider
+                          text-stone-400 mb-2.5
+                        "
+                      >
+                        {sectionName}
+                      </h4>
+                    )}
 
-              {/* ================= BUSINESS ================= */}
-              {settingsMenu.length > 0 && (
-                <div>
-                  {sidebarOpen && (
-                    <h4
-                      className="
-                        px-3 text-sm font-bold
-                        uppercase tracking-wider
-                        text-stone-400 mb-2.5
-                      "
-                    >
-                      Settings
-                    </h4>
-                  )}
-
-                  {renderNavGroup(settingsMenu)}
-                </div>
-              )}
+                    {renderNavGroup(sectionItems)}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
