@@ -124,14 +124,14 @@ const UserProjects = () => {
               placeholder="Search projects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="rounded-full border border-stone-200/80 bg-white py-2 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-48 sm:w-60"
+              className="rounded-full border border-stone-200/80 bg-white py-2 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-48 sm:w-60"
             />
           </div>
 
           {/* New Ticket CTA */}
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Plus size={15} />
             <span>New Task Ticket</span>
@@ -142,7 +142,7 @@ const UserProjects = () => {
       {/* 2. STATS PILL COUNTERS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0">
             <FolderGit2 size={20} />
           </div>
           <div>
@@ -152,7 +152,7 @@ const UserProjects = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0">
             <CheckSquare size={20} />
           </div>
           <div>
@@ -196,7 +196,7 @@ const UserProjects = () => {
             onClick={() => setActiveFilter(tab.id)}
             className={`rounded-full px-4 py-1.5 transition-all ${
               activeFilter === tab.id
-                ? "bg-[#1E5642] text-white shadow-sm"
+                ? "bg-[var(--secondary)] text-white shadow-sm"
                 : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
             }`}
           >
@@ -221,7 +221,7 @@ const UserProjects = () => {
                     <span className="text-[11px] font-semibold text-stone-400 uppercase tracking-wide">
                       {prj.client}
                     </span>
-                    <h3 className="text-base font-extrabold text-stone-900 group-hover:text-[#EA580C] transition mt-0.5">
+                    <h3 className="text-base font-extrabold text-stone-900 group-hover:text-[var(--primary)] transition mt-0.5">
                       {prj.name}
                     </h3>
                   </div>
@@ -247,10 +247,10 @@ const UserProjects = () => {
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${
                         prj.progress === 100
-                          ? "bg-emerald-500"
+                          ? "bg-[var(--secondary-500)]"
                           : prj.progress > 70
-                          ? "bg-[#1E5642]"
-                          : "bg-[#EA580C]"
+                          ? "bg-[var(--secondary)]"
+                          : "bg-[var(--primary)]"
                       }`}
                       style={{ width: `${prj.progress}%` }}
                     />

@@ -5,6 +5,25 @@
 :root {
   --primary: #EA580C;
   --secondary: #1E5642;
+
+  --primary-50: color-mix(in srgb, var(--primary) 7%, white);
+  --primary-100: color-mix(in srgb, var(--primary) 14%, white);
+  --primary-200: color-mix(in srgb, var(--primary) 28%, white);
+  --primary-300: color-mix(in srgb, var(--primary) 42%, white);
+  --primary-400: color-mix(in srgb, var(--primary) 62%, white);
+  --primary-500: var(--primary);
+  --primary-600: color-mix(in srgb, var(--primary) 88%, black);
+  --primary-700: color-mix(in srgb, var(--primary) 72%, black);
+  --primary-900: color-mix(in srgb, var(--primary) 42%, black);
+  --secondary-50: color-mix(in srgb, var(--secondary) 7%, white);
+  --secondary-100: color-mix(in srgb, var(--secondary) 14%, white);
+  --secondary-200: color-mix(in srgb, var(--secondary) 28%, white);
+  --secondary-300: color-mix(in srgb, var(--secondary) 42%, white);
+  --secondary-400: color-mix(in srgb, var(--secondary) 62%, white);
+  --secondary-500: var(--secondary);
+  --secondary-600: color-mix(in srgb, var(--secondary) 88%, black);
+  --secondary-700: color-mix(in srgb, var(--secondary) 72%, black);
+  --secondary-900: color-mix(in srgb, var(--secondary) 42%, black);
 }
 
 body {

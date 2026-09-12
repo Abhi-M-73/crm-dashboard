@@ -97,7 +97,7 @@ const UserPaySlip = () => {
             <select
               value={selectedMonth}
               onChange={(e) => setSelectedMonth(e.target.value)}
-              className="appearance-none rounded-full border border-stone-200/80 bg-white py-2 pl-4 pr-9 text-xs font-bold text-stone-700 shadow-sm outline-none focus:border-[#EA580C] cursor-pointer"
+              className="appearance-none rounded-full border border-stone-200/80 bg-white py-2 pl-4 pr-9 text-xs font-bold text-stone-700 shadow-sm outline-none focus:border-[var(--primary)] cursor-pointer"
             >
               <option value="august-2026">August 2026</option>
               <option value="july-2026">July 2026</option>
@@ -117,7 +117,7 @@ const UserPaySlip = () => {
           <button
             type="button"
             onClick={handlePrint}
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Download size={14} />
             <span>Download PDF</span>
@@ -132,7 +132,7 @@ const UserPaySlip = () => {
         <div className="flex flex-col sm:flex-row sm:items-start justify-between border-b-2 border-stone-100 pb-6 gap-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1E5642] text-white shadow-sm">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--secondary)] text-white shadow-sm">
                 <span className="text-base font-bold leading-none">✤</span>
               </div>
               <div>
@@ -147,7 +147,7 @@ const UserPaySlip = () => {
           </div>
 
           <div className="sm:text-right space-y-0.5">
-            <span className="inline-block rounded-full bg-orange-50 px-3 py-1 text-[11px] font-black text-[#EA580C] uppercase tracking-wider">
+            <span className="inline-block rounded-full bg-[var(--primary-50)] px-3 py-1 text-[11px] font-black text-[var(--primary)] uppercase tracking-wider">
               Salary Payslip
             </span>
             <p className="text-xs font-extrabold text-stone-800 pt-1">
@@ -182,7 +182,7 @@ const UserPaySlip = () => {
 
             <div>
               <span className="text-[10px] font-semibold text-stone-400 uppercase tracking-wider block">Disbursement Date</span>
-              <span className="font-extrabold text-[#1E5642] mt-0.5 block">{currentSlip.payDate}</span>
+              <span className="font-extrabold text-[var(--secondary)] mt-0.5 block">{currentSlip.payDate}</span>
               <span className="text-[10px] text-stone-500">ACH Direct Deposit</span>
             </div>
           </div>
@@ -194,11 +194,11 @@ const UserPaySlip = () => {
             </div>
             <div>
               <span className="text-[10px] text-stone-400 block">Days Present</span>
-              <span className="font-bold text-[#1E5642]">{currentSlip.presentDays} Days</span>
+              <span className="font-bold text-[var(--secondary)]">{currentSlip.presentDays} Days</span>
             </div>
             <div>
               <span className="text-[10px] text-stone-400 block">Paid Leaves Taken</span>
-              <span className="font-bold text-[#EA580C]">{currentSlip.paidLeaves} Day</span>
+              <span className="font-bold text-[var(--primary)]">{currentSlip.paidLeaves} Day</span>
             </div>
             <div>
               <span className="text-[10px] text-stone-400 block">Loss of Pay (LOP)</span>
@@ -212,7 +212,7 @@ const UserPaySlip = () => {
           
           {/* Left Table: Earnings */}
           <div className="rounded-2xl border border-stone-100 overflow-hidden">
-            <div className="bg-[#E1EBE6] px-4 py-2.5 flex items-center justify-between font-bold text-[#1E5642]">
+            <div className="bg-[var(--secondary-100)] px-4 py-2.5 flex items-center justify-between font-bold text-[var(--secondary)]">
               <span>Earnings Component</span>
               <span>Amount (USD)</span>
             </div>
@@ -226,13 +226,13 @@ const UserPaySlip = () => {
             </div>
             <div className="bg-[#FAF8F5] px-4 py-3 flex items-center justify-between font-black text-stone-900 border-t border-stone-200/70">
               <span>Gross Earnings</span>
-              <span className="text-sm text-[#1E5642]">${currentSlip.grossEarnings.toFixed(2)}</span>
+              <span className="text-sm text-[var(--secondary)]">${currentSlip.grossEarnings.toFixed(2)}</span>
             </div>
           </div>
 
           {/* Right Table: Deductions */}
           <div className="rounded-2xl border border-stone-100 overflow-hidden">
-            <div className="bg-orange-50 px-4 py-2.5 flex items-center justify-between font-bold text-[#EA580C]">
+            <div className="bg-[var(--primary-50)] px-4 py-2.5 flex items-center justify-between font-bold text-[var(--primary)]">
               <span>Deductions Component</span>
               <span>Amount (USD)</span>
             </div>
@@ -253,7 +253,7 @@ const UserPaySlip = () => {
         </div>
 
         {/* Net Salary Payable Box */}
-        <div className="rounded-3xl bg-gradient-to-r from-[#12231E] to-[#1E5642] text-white p-6 sm:p-7 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 my-6">
+        <div className="rounded-3xl bg-gradient-to-r from-[var(--secondary-900)] to-[var(--secondary)] text-white p-6 sm:p-7 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 my-6">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-wider text-stone-300 block">
               Net Payable Take-Home Amount
@@ -267,7 +267,7 @@ const UserPaySlip = () => {
           </div>
 
           <div className="flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-2.5 backdrop-blur-md border border-white/20">
-            <ShieldCheck size={20} className="text-emerald-400" />
+            <ShieldCheck size={20} className="text-[var(--secondary-400)]" />
             <div className="text-left">
               <span className="text-[10px] uppercase font-bold text-stone-300 block">Verified Status</span>
               <span className="text-xs font-black text-white">Directly Disbursed</span>

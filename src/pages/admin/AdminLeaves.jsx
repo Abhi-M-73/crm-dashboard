@@ -96,20 +96,20 @@ const AdminLeaves = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Pending Approvals</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#EA580C] mt-1">{pendingCount}</p>
-          <span className="text-[11px] text-[#EA580C] font-semibold">Requires HR decision</span>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary)] mt-1">{pendingCount}</p>
+          <span className="text-[11px] text-[var(--primary)] font-semibold">Requires HR decision</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Approved This Month</p>
-          <p className="text-2xl sm:text-3xl font-black text-emerald-700 mt-1">{approvedCount}</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary-700)] mt-1">{approvedCount}</p>
           <span className="text-[11px] text-stone-500 font-medium">Calendar synchronized</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">On Leave Today</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#1E5642] mt-1">4</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">Capacity: 98.4%</span>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary)] mt-1">4</p>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">Capacity: 98.4%</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
@@ -166,7 +166,7 @@ const AdminLeaves = () => {
                     </td>
 
                     <td className="px-5 py-3.5">
-                      <span className="inline-block rounded-lg bg-indigo-50 border border-indigo-100 px-2.5 py-1 text-[11px] font-bold text-indigo-700">
+                      <span className="inline-block rounded-lg bg-[var(--primary-50)] border border-[var(--primary-100)] px-2.5 py-1 text-[11px] font-bold text-[var(--primary-700)]">
                         {l.type}
                       </span>
                     </td>
@@ -185,7 +185,7 @@ const AdminLeaves = () => {
                       <span
                         className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-bold border ${
                           l.status === "Approved"
-                            ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                            ? "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[var(--secondary-200)]"
                             : l.status === "Rejected"
                             ? "bg-rose-50 text-rose-700 border-rose-200"
                             : "bg-amber-50 text-amber-700 border-amber-200"
@@ -200,7 +200,7 @@ const AdminLeaves = () => {
                         <div className="inline-flex items-center gap-1.5">
                           <button
                             onClick={() => handleAction(l.id, "Approved")}
-                            className="inline-flex items-center gap-1 rounded-xl bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-emerald-700 transition"
+                            className="inline-flex items-center gap-1 rounded-xl bg-[var(--secondary-600)] px-3 py-1.5 text-xs font-bold text-white hover:bg-[var(--secondary-700)] transition"
                           >
                             <Check size={13} />
                             <span>Approve</span>

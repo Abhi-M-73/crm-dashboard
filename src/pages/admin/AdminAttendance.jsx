@@ -135,7 +135,7 @@ const AdminAttendance = () => {
           onClick={handleExport}
           className="inline-flex items-center gap-2 rounded-2xl border border-stone-300 bg-white hover:bg-stone-50 px-5 py-2.5 text-xs sm:text-sm font-bold text-stone-700 shadow-2xs transition"
         >
-          <DownloadCloud size={16} className="text-[#1E5642]" />
+          <DownloadCloud size={16} className="text-[var(--secondary)]" />
           <span>Export Monthly CSV</span>
         </button>
       </div>
@@ -145,18 +145,18 @@ const AdminAttendance = () => {
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Present Today</p>
           <p className="text-2xl sm:text-3xl font-black text-stone-900 mt-1">248 / 252</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">98.4% attendance rate</span>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">98.4% attendance rate</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Late Arrivals</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#EA580C] mt-1">8</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary)] mt-1">8</p>
           <span className="text-[11px] text-stone-500 font-medium">Grace period: 15 mins</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">On Approved Leave</p>
-          <p className="text-2xl sm:text-3xl font-black text-indigo-700 mt-1">4</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary-700)] mt-1">4</p>
           <span className="text-[11px] text-stone-500 font-medium">Scheduled time-off</span>
         </div>
 
@@ -233,12 +233,12 @@ const AdminAttendance = () => {
                       </td>
                       <td className="px-5 py-3.5 font-mono font-bold text-stone-800">{log.inTime}</td>
                       <td className="px-5 py-3.5 font-mono text-stone-600">{log.outTime}</td>
-                      <td className="px-5 py-3.5 font-semibold text-emerald-700">{log.duration}</td>
+                      <td className="px-5 py-3.5 font-semibold text-[var(--secondary-700)]">{log.duration}</td>
                       <td className="px-5 py-3.5">
                         <span
                           className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-bold border ${
                             log.status === "On-Time"
-                              ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                              ? "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[var(--secondary-200)]"
                               : "bg-amber-50 text-amber-700 border-amber-200"
                           }`}
                         >
@@ -247,7 +247,7 @@ const AdminAttendance = () => {
                       </td>
                       <td className="px-5 py-3.5 text-xs text-stone-600">
                         <div className="flex items-center gap-1.5">
-                          <MapPin size={13} className={log.isVerified ? "text-emerald-600" : "text-amber-500"} />
+                          <MapPin size={13} className={log.isVerified ? "text-[var(--secondary-600)]" : "text-amber-500"} />
                           <span>{log.location}</span>
                         </div>
                       </td>
@@ -265,7 +265,7 @@ const AdminAttendance = () => {
         <div className="overflow-hidden rounded-[24px] border border-stone-200 bg-white shadow-xs">
           {regularizations.length === 0 ? (
             <div className="p-12 text-center text-stone-400">
-              <CheckCircle2 size={36} className="mx-auto text-emerald-500 mb-2" />
+              <CheckCircle2 size={36} className="mx-auto text-[var(--secondary-500)] mb-2" />
               <p className="font-bold text-stone-700">All caught up!</p>
               <p className="text-xs">No pending regularization requests.</p>
             </div>
@@ -289,7 +289,7 @@ const AdminAttendance = () => {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleRegularization(item.id, true)}
-                      className="inline-flex items-center gap-1 rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-emerald-700 transition"
+                      className="inline-flex items-center gap-1 rounded-xl bg-[var(--secondary-600)] px-3.5 py-1.5 text-xs font-bold text-white hover:bg-[var(--secondary-700)] transition"
                     >
                       <Check size={13} />
                       <span>Approve</span>

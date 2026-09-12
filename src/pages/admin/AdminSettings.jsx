@@ -46,7 +46,7 @@ const AdminSettings = () => {
 
         <button
           onClick={handleSave}
-          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-orange-500/20 transition-all hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-[color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all hover:-translate-y-0.5"
         >
           <Save size={16} />
           <span>Save Changes</span>
@@ -57,7 +57,7 @@ const AdminSettings = () => {
         {/* Section 1: General Company Info */}
         <div className="rounded-[28px] border border-stone-200 bg-white p-6 sm:p-7 shadow-xs space-y-4">
           <div className="flex items-center gap-2.5 border-b border-stone-100 pb-3">
-            <Building2 size={20} className="text-[#1E5642]" />
+            <Building2 size={20} className="text-[var(--secondary)]" />
             <h3 className="text-base font-bold text-stone-900">Company Information</h3>
           </div>
 
@@ -95,7 +95,7 @@ const AdminSettings = () => {
         {/* Section 2: Shift & Geofence Rules */}
         <div className="rounded-[28px] border border-stone-200 bg-white p-6 sm:p-7 shadow-xs space-y-4">
           <div className="flex items-center gap-2.5 border-b border-stone-100 pb-3">
-            <Clock size={20} className="text-[#EA580C]" />
+            <Clock size={20} className="text-[var(--primary)]" />
             <h3 className="text-base font-bold text-stone-900">Shift & Geofenced Attendance Rules</h3>
           </div>
 
@@ -142,7 +142,7 @@ const AdminSettings = () => {
         {/* Section 3: Leave Quotas & Payroll Cycle */}
         <div className="rounded-[28px] border border-stone-200 bg-white p-6 sm:p-7 shadow-xs space-y-4">
           <div className="flex items-center gap-2.5 border-b border-stone-100 pb-3">
-            <Calendar size={20} className="text-indigo-600" />
+            <Calendar size={20} className="text-[var(--primary-600)]" />
             <h3 className="text-base font-bold text-stone-900">Annual Leave Bank & Payroll Schedule</h3>
           </div>
 

@@ -181,7 +181,7 @@ const UserContacts = () => {
           <button
             type="button"
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Plus size={15} />
             <span>Add Contact</span>
@@ -192,7 +192,7 @@ const UserContacts = () => {
       {/* 2. Stats Pill Counters */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <Users size={20} />
           </div>
           <div>
@@ -204,7 +204,7 @@ const UserContacts = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <UserCheck size={20} />
           </div>
           <div>
@@ -250,7 +250,7 @@ const UserContacts = () => {
               onClick={() => setActiveTab(tab)}
               className={`rounded-full px-4 py-1.5 transition-all whitespace-nowrap capitalize ${
                 activeTab === tab
-                  ? "bg-[#1E5642] text-white shadow-sm"
+                  ? "bg-[var(--secondary)] text-white shadow-sm"
                   : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
               }`}
             >
@@ -266,7 +266,7 @@ const UserContacts = () => {
             placeholder="Search name, role, extension..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-full sm:w-64"
+            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-full sm:w-64"
           />
         </div>
       </div>
@@ -316,7 +316,7 @@ const UserContacts = () => {
                   <td className="py-3.5 font-medium text-stone-700">
                     <a
                       href={`mailto:${contact.email}`}
-                      className="flex items-center gap-1.5 hover:text-[#EA580C] transition"
+                      className="flex items-center gap-1.5 hover:text-[var(--primary)] transition"
                     >
                       <Mail size={13} className="text-stone-400" />
                       <span>{contact.email}</span>
@@ -327,7 +327,7 @@ const UserContacts = () => {
                   <td className="py-3.5 font-medium text-stone-700">
                     <a
                       href={`tel:${contact.phone}`}
-                      className="flex items-center gap-1.5 hover:text-[#EA580C] transition"
+                      className="flex items-center gap-1.5 hover:text-[var(--primary)] transition"
                     >
                       <Phone size={13} className="text-stone-400" />
                       <span>{contact.phone}</span>
@@ -393,7 +393,7 @@ const UserContacts = () => {
                     placeholder="e.g. Rachel Adams"
                     value={newContact.name}
                     onChange={(e) => setNewContact({ ...newContact, name: e.target.value })}
-                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                   />
                 </div>
 
@@ -404,7 +404,7 @@ const UserContacts = () => {
                     placeholder="e.g. Lead Designer"
                     value={newContact.role}
                     onChange={(e) => setNewContact({ ...newContact, role: e.target.value })}
-                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                   />
                 </div>
               </div>
@@ -415,7 +415,7 @@ const UserContacts = () => {
                   <select
                     value={newContact.department}
                     onChange={(e) => setNewContact({ ...newContact, department: e.target.value })}
-                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                   >
                     <option value="Engineering">Engineering</option>
                     <option value="Design">Design</option>
@@ -432,7 +432,7 @@ const UserContacts = () => {
                     placeholder="e.g. 4025"
                     value={newContact.extension}
                     onChange={(e) => setNewContact({ ...newContact, extension: e.target.value })}
-                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                    className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                   />
                 </div>
               </div>
@@ -445,7 +445,7 @@ const UserContacts = () => {
                   placeholder="rachel.a@relationx.com"
                   value={newContact.email}
                   onChange={(e) => setNewContact({ ...newContact, email: e.target.value })}
-                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                 />
               </div>
 
@@ -457,7 +457,7 @@ const UserContacts = () => {
                   placeholder="+1 (555) 000-0000"
                   value={newContact.phone}
                   onChange={(e) => setNewContact({ ...newContact, phone: e.target.value })}
-                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 px-3.5 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                 />
               </div>
 
@@ -472,7 +472,7 @@ const UserContacts = () => {
                 </button>
                 <button
                   type="submit"
-                  className="rounded-2xl bg-[#EA580C] px-5 py-2.5 font-bold text-white shadow-sm hover:bg-[#d94e07] transition"
+                  className="rounded-2xl bg-[var(--primary)] px-5 py-2.5 font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition"
                 >
                   Save to Directory
                 </button>

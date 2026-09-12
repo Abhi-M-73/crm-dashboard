@@ -16,14 +16,14 @@ import {
 const AdminDashboard = () => {
   // Theme Palette Controls
   const theme = {
-    primary: "#EA580C",        // Vibrant Orange
+    primary: "var(--primary)",        // Vibrant Orange
     primaryLight: "#FFF4ED",   // Soft Orange Tint
-    secondary: "#1E5642",      // Deep Emerald Green
+    secondary: "var(--secondary)",      // Theme Secondary Color
     secondaryLight: "#E8F1EC", // Soft Green Tint
     cardBg: "#FFFFFF",
     appBg: "#F7F5F0",
     textDark: "#1C1917",
-    textMuted: "#A8A29E",
+    textMuted: "var(--secondary-300)",
     border: "#ECE8E1"
   };
 
@@ -41,7 +41,7 @@ const AdminDashboard = () => {
   ];
 
   const topEmployees = [
-    { name: "Claire Horington", role: "Sr. Frontend Lead", punctuality: "99.4%", tasks: "18/18 Done", avatarBg: "bg-emerald-600 text-white" },
+    { name: "Claire Horington", role: "Sr. Frontend Lead", punctuality: "99.4%", tasks: "18/18 Done", avatarBg: "bg-[var(--secondary-600)] text-white" },
     { name: "Marcus Vance", role: "Product Designer", punctuality: "98.2%", tasks: "14/14 Done", avatarBg: "bg-amber-600 text-white" },
     { name: "Sophia Chen", role: "DevOps Lead", punctuality: "98.8%", tasks: "22/22 Done", avatarBg: "bg-blue-600 text-white" },
   ];
@@ -91,7 +91,7 @@ const AdminDashboard = () => {
                 >
                   <Clock size={20} style={{ color: theme.secondary }} />
                 </div>
-                <span className="rounded-full bg-emerald-50 text-emerald-600 px-2.5 py-0.5 text-xs font-bold flex items-center gap-0.5">
+                <span className="rounded-full bg-[var(--secondary-50)] text-[var(--secondary-600)] px-2.5 py-0.5 text-xs font-bold flex items-center gap-0.5">
                   <TrendingUp size={12} />
                   98.4%
                 </span>
@@ -100,7 +100,7 @@ const AdminDashboard = () => {
                 <span className="text-xs font-medium text-stone-400 block">Today's Attendance</span>
                 <div className="flex items-baseline gap-2 mt-0.5">
                   <span className="text-3xl font-black tracking-tight leading-none">248 / 252</span>
-                  <span className="text-[11px] text-emerald-600 font-semibold">Staff Checked In</span>
+                  <span className="text-[11px] text-[var(--secondary-600)] font-semibold">Staff Checked In</span>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@ const AdminDashboard = () => {
                 >
                   <Users size={20} style={{ color: theme.secondary }} />
                 </div>
-                <span className="rounded-full bg-emerald-50 text-emerald-600 px-2.5 py-0.5 text-xs font-bold flex items-center gap-0.5">
+                <span className="rounded-full bg-[var(--secondary-50)] text-[var(--secondary-600)] px-2.5 py-0.5 text-xs font-bold flex items-center gap-0.5">
                   <TrendingUp size={12} />
                   +14 Staff
                 </span>
@@ -256,7 +256,7 @@ const AdminDashboard = () => {
           >
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-stone-900">Department Headcount</h3>
-              <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+              <span className="text-xs font-bold text-[var(--secondary-700)] bg-[var(--secondary-50)] px-2 py-0.5 rounded-full">
                 4 Units
               </span>
             </div>
@@ -266,7 +266,7 @@ const AdminDashboard = () => {
                 className="h-36 w-36 rounded-full flex items-center justify-center shadow-inner"
                 style={{
                   background:
-                    "conic-gradient(#EA580C 0% 42%, #1E5642 42% 67%, #6366f1 67% 85%, #A8A29E 85% 100%)",
+                    "conic-gradient(var(--primary) 0% 42%, var(--secondary) 42% 67%, var(--primary-500) 67% 85%, var(--secondary-300) 85% 100%)",
                 }}
               >
                 <div className="h-20 w-20 rounded-full bg-white flex flex-col items-center justify-center shadow-xs">
@@ -279,25 +279,25 @@ const AdminDashboard = () => {
             <div className="space-y-2 text-xs">
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 text-stone-600">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#EA580C]" /> Engineering
+                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--primary)]" /> Engineering
                 </span>
                 <span className="font-bold text-stone-900">106 (42%)</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 text-stone-600">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#1E5642]" /> Design & Product
+                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" /> Design & Product
                 </span>
                 <span className="font-bold text-stone-900">63 (25%)</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 text-stone-600">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#6366f1]" /> Sales & Marketing
+                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--primary-500)]" /> Sales & Marketing
                 </span>
                 <span className="font-bold text-stone-900">45 (18%)</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 text-stone-600">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#A8A29E]" /> HR & Operations
+                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary-300)]" /> HR & Operations
                 </span>
                 <span className="font-bold text-stone-900">38 (15%)</span>
               </div>
@@ -328,7 +328,7 @@ const AdminDashboard = () => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <span className="text-xs font-bold text-emerald-700">{emp.punctuality}</span>
+                      <span className="text-xs font-bold text-[var(--secondary-700)]">{emp.punctuality}</span>
                       <p className="text-[9px] text-stone-400">{emp.tasks}</p>
                     </div>
                   </div>

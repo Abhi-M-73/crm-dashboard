@@ -102,13 +102,13 @@ const UserDashboard = () => {
                       <path
                         d="M 10 110 Q 70 80 140 60 T 255 45 T 350 85 T 450 40 T 490 60"
                         fill="none"
-                        stroke="#1E5642"
+                        stroke="var(--secondary)"
                         strokeWidth="2.5"
                       />
 
                       {/* Highlight Marker */}
-                      <line x1="255" y1="45" x2="255" y2="145" stroke="#1E5642" strokeDasharray="3 3" strokeWidth="1.5" />
-                      <circle cx="255" cy="45" r="4.5" fill="#1E5642" stroke="#fff" strokeWidth="2" />
+                      <line x1="255" y1="45" x2="255" y2="145" stroke="var(--secondary)" strokeDasharray="3 3" strokeWidth="1.5" />
+                      <circle cx="255" cy="45" r="4.5" fill="var(--secondary)" stroke="#fff" strokeWidth="2" />
                     </svg>
 
                     {/* Metric Tooltip badge */}
@@ -165,7 +165,7 @@ const UserDashboard = () => {
                       strokeLinecap="round"
                     />
 
-                    <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+                    <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
                     <circle
                       cx="60"
                       cy="60"
@@ -214,7 +214,7 @@ const UserDashboard = () => {
                 <div className="space-y-3.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[var(--primary)]">
+                      <div className="w-10 h-10 rounded-2xl bg-[var(--primary-50)] flex items-center justify-center text-[var(--primary)]">
                         <CheckCircle2 size={19} />
                       </div>
                       <div>
@@ -222,14 +222,14 @@ const UserDashboard = () => {
                         <span className="text-[10px] text-stone-400">Due: Tomorrow, 5 PM</span>
                       </div>
                     </div>
-                    <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100">
+                    <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[var(--secondary-50)] text-[var(--secondary-600)] border border-[var(--secondary-100)]">
                       In Review
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[var(--primary)]">
+                      <div className="w-10 h-10 rounded-2xl bg-[var(--primary-50)] flex items-center justify-center text-[var(--primary)]">
                         <Timer size={19} />
                       </div>
                       <div>
@@ -244,7 +244,7 @@ const UserDashboard = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-[#FFEDD5] flex items-center justify-center text-[var(--primary)]">
+                      <div className="w-10 h-10 rounded-2xl bg-[var(--primary-50)] flex items-center justify-center text-[var(--primary)]">
                         <AlertCircle size={19} />
                       </div>
                       <div>
@@ -290,7 +290,7 @@ const UserDashboard = () => {
                   <tbody className="divide-y divide-stone-50">
                     <tr className="hover:bg-stone-50/50">
                       <td className="py-3 font-semibold text-stone-800 flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-lg bg-[#E1EBE6] text-[var(--secondary)] flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-lg bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center">
                           <FolderGit2 size={13} />
                         </div>
                         Fintech Mobile App
@@ -302,7 +302,7 @@ const UserDashboard = () => {
                       </td>
                       <td className="py-3">
                         <div className="w-24 bg-stone-100 h-2 rounded-full overflow-hidden">
-                          <div className="bg-[#1E5642] h-full rounded-full" style={{ width: '75%' }} />
+                          <div className="bg-[var(--secondary)] h-full rounded-full" style={{ width: '75%' }} />
                         </div>
                       </td>
                       <td className="py-3 text-right text-stone-400">
@@ -312,7 +312,7 @@ const UserDashboard = () => {
 
                     <tr className="hover:bg-stone-50/50">
                       <td className="py-3 font-semibold text-stone-800 flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-lg bg-[#FFEDD5] text-[var(--primary)] flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-lg bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center">
                           <FolderGit2 size={13} />
                         </div>
                         CRM Cloud Redesign
@@ -363,8 +363,8 @@ const UserDashboard = () => {
                   <h4 className="font-bold text-stone-800 text-base">{employeeName}</h4>
                   <p className="text-xs text-stone-400 flex items-center gap-1.5 mt-0.5">
                     {employeeRole}
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 ml-1" />
-                    <span className="text-emerald-600 font-semibold text-[11px]">Active</span>
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--secondary-500)] ml-1" />
+                    <span className="text-[var(--secondary-600)] font-semibold text-[11px]">Active</span>
                   </p>
                 </div>
               </div>
@@ -442,7 +442,7 @@ const UserDashboard = () => {
                       <p className="text-[10px] text-stone-400">UI / Design Lead</p>
                     </div>
                   </div>
-                  <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-semibold text-[var(--secondary-600)] bg-[var(--secondary-50)] px-2 py-0.5 rounded-full">
                     Online
                   </span>
                 </div>

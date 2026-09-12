@@ -132,13 +132,13 @@ const UserTeamMembers = () => {
               placeholder="Search colleague, role or project..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="rounded-full border border-stone-200/80 bg-white py-2 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-48 sm:w-64"
+              className="rounded-full border border-stone-200/80 bg-white py-2 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-48 sm:w-64"
             />
           </div>
 
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <UserPlus size={15} />
             <span>Invite to Pod</span>
@@ -149,7 +149,7 @@ const UserTeamMembers = () => {
       {/* 2. STATS OVERVIEW CARDS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#FAF8F5] text-[#1E5642] flex items-center justify-center shrink-0 border border-stone-100">
+          <div className="h-11 w-11 rounded-2xl bg-[#FAF8F5] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-stone-100">
             <Users size={20} />
           </div>
           <div>
@@ -159,7 +159,7 @@ const UserTeamMembers = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-50)] text-[var(--secondary-600)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <CheckCircle2 size={20} />
           </div>
           <div>
@@ -179,7 +179,7 @@ const UserTeamMembers = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <Sparkles size={20} />
           </div>
           <div>
@@ -200,7 +200,7 @@ const UserTeamMembers = () => {
           <div>
             <div className="flex items-center gap-2">
               <h3 className="text-sm font-extrabold text-stone-900">Devon Lane</h3>
-              <span className="rounded-full bg-[#1E5642]/10 text-[#1E5642] px-2.5 py-0.5 text-[10px] font-bold">
+              <span className="rounded-full bg-[color-mix(in_srgb,var(--secondary)_10%,transparent)] text-[var(--secondary)] px-2.5 py-0.5 text-[10px] font-bold">
                 Reporting Manager
               </span>
             </div>
@@ -243,7 +243,7 @@ const UserTeamMembers = () => {
             onClick={() => setActiveFilter(tab.id)}
             className={`rounded-full px-4 py-1.5 transition-all ${
               activeFilter === tab.id
-                ? "bg-[#1E5642] text-white shadow-sm"
+                ? "bg-[var(--secondary)] text-white shadow-sm"
                 : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
             }`}
           >
@@ -257,8 +257,8 @@ const UserTeamMembers = () => {
         {filteredMembers.map((member) => {
           let statusBadge = {
             label: "Online",
-            dot: "bg-emerald-500",
-            bg: "bg-emerald-50 text-emerald-700 border-emerald-100"
+            dot: "bg-[var(--secondary-500)]",
+            bg: "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[var(--secondary-100)]"
           };
 
           if (member.status === "meeting") {
@@ -296,7 +296,7 @@ const UserTeamMembers = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-extrabold text-stone-900 group-hover:text-[#EA580C] transition">
+                      <h4 className="text-sm font-extrabold text-stone-900 group-hover:text-[var(--primary)] transition">
                         {member.name}
                       </h4>
                       <p className="text-[11px] font-semibold text-stone-400">{member.role}</p>
@@ -314,7 +314,7 @@ const UserTeamMembers = () => {
                 <div className="mt-4 p-3 rounded-2xl bg-[#FAF8F5] border border-stone-100/80 space-y-1.5 text-xs">
                   <div className="flex items-center justify-between text-stone-500">
                     <span className="text-[10px] font-semibold text-stone-400">Current Focus</span>
-                    <span className="text-[10px] font-bold text-[#EA580C]">{member.activeTasks} Active Tasks</span>
+                    <span className="text-[10px] font-bold text-[var(--primary)]">{member.activeTasks} Active Tasks</span>
                   </div>
                   <p className="font-bold text-stone-800 text-xs truncate">
                     {member.currentProject}
@@ -347,7 +347,7 @@ const UserTeamMembers = () => {
 
                 <button
                   type="button"
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-[#EA580C] hover:bg-[#d94e07] text-white text-xs font-semibold shadow-2xs transition"
+                  className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-[var(--primary)] hover:bg-[var(--primary-700)] text-white text-xs font-semibold shadow-2xs transition"
                   title="Ping on Slack / Chat"
                 >
                   <MessageSquare size={13} />

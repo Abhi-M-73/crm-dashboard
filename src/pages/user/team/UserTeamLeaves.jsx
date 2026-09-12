@@ -121,7 +121,7 @@ const UserTeamLeaves = () => {
 
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Plus size={15} />
             <span>Apply Leave</span>
@@ -132,7 +132,7 @@ const UserTeamLeaves = () => {
       {/* 2. STATS PILL COUNTERS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <Plane size={20} />
           </div>
           <div>
@@ -142,7 +142,7 @@ const UserTeamLeaves = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <UserCheck size={20} />
           </div>
           <div>
@@ -182,7 +182,7 @@ const UserTeamLeaves = () => {
               <h3 className="text-base font-extrabold text-stone-900">Sprint Pod Bandwidth</h3>
               <p className="text-[11px] text-stone-400">Total capacity impacted by time-off</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               Sufficient
             </span>
           </div>
@@ -203,13 +203,13 @@ const UserTeamLeaves = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="35"
@@ -227,10 +227,10 @@ const UserTeamLeaves = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-500 pt-3 border-t border-stone-100 font-medium">
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#1E5642]" /> 5 Available Members
+              <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" /> 5 Available Members
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" /> 1 On Leave
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" /> 1 On Leave
             </span>
           </div>
         </div>
@@ -242,7 +242,7 @@ const UserTeamLeaves = () => {
               <h3 className="text-base font-extrabold text-stone-900">Monthly Time-Off Distribution</h3>
               <p className="text-[11px] text-stone-400">Categorized by approval types this month</p>
             </div>
-            <button className="flex items-center gap-1 text-xs font-bold text-[#EA580C] hover:underline">
+            <button className="flex items-center gap-1 text-xs font-bold text-[var(--primary)] hover:underline">
               <Download size={13} />
               <span>Export Summary</span>
             </button>
@@ -250,7 +250,7 @@ const UserTeamLeaves = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100 flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0">
                 <Plane size={18} />
               </div>
               <div>
@@ -280,7 +280,7 @@ const UserTeamLeaves = () => {
             </div>
 
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100 flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0">
                 <CheckCircle2 size={18} />
               </div>
               <div>
@@ -313,7 +313,7 @@ const UserTeamLeaves = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`rounded-full px-4 py-1.5 transition-all whitespace-nowrap ${
                 activeTab === tab.id
-                  ? "bg-[#1E5642] text-white shadow-sm"
+                  ? "bg-[var(--secondary)] text-white shadow-sm"
                   : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
               }`}
             >
@@ -329,7 +329,7 @@ const UserTeamLeaves = () => {
             placeholder="Search colleague or leave..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-full sm:w-60"
+            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-full sm:w-60"
           />
         </div>
       </div>
@@ -354,13 +354,13 @@ const UserTeamLeaves = () => {
               {filteredLeaves.map((item) => {
                 let badgeStyle = {
                   label: "Approved",
-                  pill: "bg-emerald-50 text-emerald-700 border-emerald-200/60",
+                  pill: "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[color-mix(in_srgb,var(--secondary-200)_60%,transparent)]",
                 };
 
                 if (item.status === "active") {
                   badgeStyle = {
                     label: "On Leave Today",
-                    pill: "bg-orange-50 text-[#EA580C] border-orange-200/60 font-black",
+                    pill: "bg-[var(--primary-50)] text-[var(--primary)] border-[color-mix(in_srgb,var(--primary-200)_60%,transparent)] font-black",
                   };
                 } else if (item.status === "pending") {
                   badgeStyle = {
@@ -400,7 +400,7 @@ const UserTeamLeaves = () => {
                     </td>
 
                     {/* Assigned Backup */}
-                    <td className="py-3.5 font-semibold text-[#1E5642]">{item.backup}</td>
+                    <td className="py-3.5 font-semibold text-[var(--secondary)]">{item.backup}</td>
 
                     {/* Reason */}
                     <td className="py-3.5 text-stone-500 font-medium max-w-xs truncate">

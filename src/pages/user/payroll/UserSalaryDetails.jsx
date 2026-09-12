@@ -80,7 +80,7 @@ const UserSalaryDetails = () => {
 
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Download size={14} />
             <span>Latest Payslip</span>
@@ -91,7 +91,7 @@ const UserSalaryDetails = () => {
       {/* 2. STATS PILL COUNTERS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <BadgeDollarSign size={20} />
           </div>
           <div>
@@ -101,7 +101,7 @@ const UserSalaryDetails = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <Wallet size={20} />
           </div>
           <div>
@@ -141,7 +141,7 @@ const UserSalaryDetails = () => {
               <h3 className="text-base font-extrabold text-stone-900">Take-Home Ratio</h3>
               <p className="text-[11px] text-stone-400">Net salary vs tax/benefit deductions</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               Disbursed On Time
             </span>
           </div>
@@ -162,13 +162,13 @@ const UserSalaryDetails = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="35"
@@ -186,10 +186,10 @@ const UserSalaryDetails = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-500 pt-3 border-t border-stone-100 font-medium">
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#1E5642]" /> $6,350 Net Pay
+              <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" /> $6,350 Net Pay
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" /> $1,150 Deductions
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" /> $1,150 Deductions
             </span>
           </div>
         </div>
@@ -201,7 +201,7 @@ const UserSalaryDetails = () => {
               <h3 className="text-base font-extrabold text-stone-900">Monthly Compensation Structure</h3>
               <p className="text-[11px] text-stone-400">Standard monthly CTC structure per employment agreement</p>
             </div>
-            <span className="text-xs font-bold text-[#1E5642] bg-[#E1EBE6] px-2.5 py-0.5 rounded-full">
+            <span className="text-xs font-bold text-[var(--secondary)] bg-[var(--secondary-100)] px-2.5 py-0.5 rounded-full">
               Full-time Regular
             </span>
           </div>
@@ -209,7 +209,7 @@ const UserSalaryDetails = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs">
             {/* Earnings Column */}
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100 space-y-2">
-              <span className="text-[11px] font-bold text-[#1E5642] uppercase tracking-wider block">
+              <span className="text-[11px] font-bold text-[var(--secondary)] uppercase tracking-wider block">
                 Earnings (Gross $7,500)
               </span>
               <div className="flex justify-between text-stone-600">
@@ -232,7 +232,7 @@ const UserSalaryDetails = () => {
 
             {/* Deductions Column */}
             <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100 space-y-2">
-              <span className="text-[11px] font-bold text-[#EA580C] uppercase tracking-wider block">
+              <span className="text-[11px] font-bold text-[var(--primary)] uppercase tracking-wider block">
                 Deductions ($1,150)
               </span>
               <div className="flex justify-between text-stone-600">
@@ -256,7 +256,7 @@ const UserSalaryDetails = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-400 pt-2 border-t border-stone-100 font-medium">
             <span>Annual Cost to Company (CTC): $90,000.00</span>
-            <span className="text-[#EA580C] font-semibold cursor-pointer hover:underline">
+            <span className="text-[var(--primary)] font-semibold cursor-pointer hover:underline">
               Tax Declaration Form 12BB &rarr;
             </span>
           </div>
@@ -267,13 +267,13 @@ const UserSalaryDetails = () => {
       {/* 4. BANK ACCOUNT DETAILS CARD */}
       <div className="rounded-[32px] border border-stone-200/70 bg-white p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
-          <div className="h-12 w-12 rounded-2xl bg-[#FAF8F5] border border-stone-200/60 text-[#1E5642] flex items-center justify-center shrink-0">
+          <div className="h-12 w-12 rounded-2xl bg-[#FAF8F5] border border-stone-200/60 text-[var(--secondary)] flex items-center justify-center shrink-0">
             <Building2 size={22} />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h3 className="text-sm font-extrabold text-stone-900">Silicon Valley Bank & Trust</h3>
-              <span className="rounded-full bg-emerald-50 text-emerald-700 px-2.5 py-0.5 text-[10px] font-bold border border-emerald-100">
+              <span className="rounded-full bg-[var(--secondary-50)] text-[var(--secondary-700)] px-2.5 py-0.5 text-[10px] font-bold border border-[var(--secondary-100)]">
                 Primary Salary Account
               </span>
             </div>
@@ -320,7 +320,7 @@ const UserSalaryDetails = () => {
               {payslips.map((row) => (
                 <tr key={row.id} className="hover:bg-stone-50/60 transition-colors">
                   {/* ID */}
-                  <td className="py-3.5 font-bold text-[#EA580C]">{row.id}</td>
+                  <td className="py-3.5 font-bold text-[var(--primary)]">{row.id}</td>
 
                   {/* Period */}
                   <td className="py-3.5 font-bold text-stone-800">{row.month}</td>
@@ -336,14 +336,14 @@ const UserSalaryDetails = () => {
 
                   {/* Net */}
                   <td className="py-3.5 font-black text-stone-900">
-                    <span className="rounded-lg bg-[#FAF8F5] border border-stone-200/60 px-2 py-0.5 text-[#1E5642]">
+                    <span className="rounded-lg bg-[#FAF8F5] border border-stone-200/60 px-2 py-0.5 text-[var(--secondary)]">
                       {row.netPay}
                     </span>
                   </td>
 
                   {/* Status */}
                   <td className="py-3.5">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 border border-emerald-100">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[10px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
                       <CheckCircle2 size={11} />
                       {row.status}
                     </span>

@@ -116,7 +116,7 @@ const UserCompanyPolicies = () => {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Download size={14} />
             <span>Complete Handbook (PDF)</span>
@@ -127,7 +127,7 @@ const UserCompanyPolicies = () => {
       {/* 2. STATS PILL COUNTERS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <BookOpen size={20} />
           </div>
           <div>
@@ -137,7 +137,7 @@ const UserCompanyPolicies = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <ShieldCheck size={20} />
           </div>
           <div>
@@ -177,7 +177,7 @@ const UserCompanyPolicies = () => {
               <h3 className="text-base font-extrabold text-stone-900">Governance Compliance</h3>
               <p className="text-[11px] text-stone-400">Acknowledgment tracking for annual audit</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               Good Standing
             </span>
           </div>
@@ -198,13 +198,13 @@ const UserCompanyPolicies = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="26"
@@ -222,10 +222,10 @@ const UserCompanyPolicies = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-500 pt-3 border-t border-stone-100 font-medium">
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#1E5642]" /> 5 Signed
+              <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" /> 5 Signed
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" /> 1 Due Signature
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" /> 1 Due Signature
             </span>
           </div>
         </div>
@@ -248,7 +248,7 @@ const UserCompanyPolicies = () => {
               </p>
               <button
                 type="button"
-                className="mt-2 text-xs font-bold text-[#EA580C] hover:underline flex items-center gap-1"
+                className="mt-2 text-xs font-bold text-[var(--primary)] hover:underline flex items-center gap-1"
               >
                 <span>Read & Electronically Sign</span>
                 <ExternalLink size={12} />
@@ -263,7 +263,7 @@ const UserCompanyPolicies = () => {
             </div>
             <a
               href="mailto:compliance@relationx.com"
-              className="font-bold text-[#1E5642] hover:underline"
+              className="font-bold text-[var(--secondary)] hover:underline"
             >
               Contact Legal HR &rarr;
             </a>
@@ -288,7 +288,7 @@ const UserCompanyPolicies = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`rounded-full px-4 py-1.5 transition-all whitespace-nowrap ${
                 activeTab === tab.id
-                  ? "bg-[#1E5642] text-white shadow-sm"
+                  ? "bg-[var(--secondary)] text-white shadow-sm"
                   : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
               }`}
             >
@@ -304,7 +304,7 @@ const UserCompanyPolicies = () => {
             placeholder="Search policy name or clause..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-full sm:w-60"
+            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-full sm:w-60"
           />
         </div>
       </div>
@@ -320,7 +320,7 @@ const UserCompanyPolicies = () => {
               {/* Card Header: Category & Badges */}
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold text-[#EA580C] bg-orange-50 px-2.5 py-0.5 rounded-md font-mono">
+                  <span className="text-[10px] font-bold text-[var(--primary)] bg-[var(--primary-50)] px-2.5 py-0.5 rounded-md font-mono">
                     {item.id}
                   </span>
                   <span className="text-[11px] font-semibold text-stone-400 uppercase tracking-wide">
@@ -336,7 +336,7 @@ const UserCompanyPolicies = () => {
               </div>
 
               {/* Title & Description */}
-              <h3 className="text-base font-extrabold text-stone-900 group-hover:text-[#EA580C] transition mt-2">
+              <h3 className="text-base font-extrabold text-stone-900 group-hover:text-[var(--primary)] transition mt-2">
                 {item.title}
               </h3>
               <p className="text-xs text-stone-500 mt-1 leading-relaxed line-clamp-2">
@@ -347,14 +347,14 @@ const UserCompanyPolicies = () => {
             {/* Card Footer: Acknowledgment status & Download action */}
             <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
               {item.acknowledged ? (
-                <span className="inline-flex items-center gap-1.5 font-bold text-[#1E5642]">
-                  <CheckCircle2 size={15} className="text-emerald-500" />
+                <span className="inline-flex items-center gap-1.5 font-bold text-[var(--secondary)]">
+                  <CheckCircle2 size={15} className="text-[var(--secondary-500)]" />
                   <span>Acknowledged</span>
                 </span>
               ) : (
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1.5 font-bold text-[#EA580C] hover:underline"
+                  className="inline-flex items-center gap-1.5 font-bold text-[var(--primary)] hover:underline"
                 >
                   <Clock size={14} />
                   <span>Sign Document &rarr;</span>

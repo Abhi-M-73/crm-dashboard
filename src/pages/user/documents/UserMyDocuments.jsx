@@ -108,7 +108,7 @@ const UserMyDocuments = () => {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Upload size={14} />
             <span>Upload Document</span>
@@ -119,7 +119,7 @@ const UserMyDocuments = () => {
       {/* 2. STATS PILL COUNTERS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <ShieldCheck size={20} />
           </div>
           <div>
@@ -129,7 +129,7 @@ const UserMyDocuments = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <FolderLock size={20} />
           </div>
           <div>
@@ -169,7 +169,7 @@ const UserMyDocuments = () => {
               <h3 className="text-base font-extrabold text-stone-900">Document Verification</h3>
               <p className="text-[11px] text-stone-400">KYC and HR mandatory documentation audit</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               Compliant
             </span>
           </div>
@@ -190,13 +190,13 @@ const UserMyDocuments = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="24"
@@ -214,10 +214,10 @@ const UserMyDocuments = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-500 pt-3 border-t border-stone-100 font-medium">
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#1E5642]" /> 5 Approved Files
+              <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" /> 5 Approved Files
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" /> 1 In Verification
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" /> 1 In Verification
             </span>
           </div>
         </div>
@@ -229,12 +229,12 @@ const UserMyDocuments = () => {
             <p className="text-[11px] text-stone-400">Submit updated certificates or identification files to HR</p>
           </div>
 
-          <div className="border-2 border-dashed border-stone-200 hover:border-[#EA580C] rounded-2xl p-6 text-center cursor-pointer transition-colors bg-[#FAF8F5]/60 hover:bg-[#FAF8F5]">
-            <div className="mx-auto w-10 h-10 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center mb-3">
+          <div className="border-2 border-dashed border-stone-200 hover:border-[var(--primary)] rounded-2xl p-6 text-center cursor-pointer transition-colors bg-[#FAF8F5]/60 hover:bg-[#FAF8F5]">
+            <div className="mx-auto w-10 h-10 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center mb-3">
               <Upload size={18} />
             </div>
             <p className="text-xs font-bold text-stone-800">
-              Drag & drop files here or <span className="text-[#EA580C] underline">browse local disk</span>
+              Drag & drop files here or <span className="text-[var(--primary)] underline">browse local disk</span>
             </p>
             <p className="text-[10px] text-stone-400 mt-1">
               Supports PDF, DOCX, PNG up to 15MB per file
@@ -243,7 +243,7 @@ const UserMyDocuments = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-400 pt-2 border-t border-stone-100 font-medium">
             <span>Documents are encrypted at rest with AES-256</span>
-            <span className="text-[#EA580C] font-semibold cursor-pointer hover:underline">
+            <span className="text-[var(--primary)] font-semibold cursor-pointer hover:underline">
               View Privacy Rules &rarr;
             </span>
           </div>
@@ -267,7 +267,7 @@ const UserMyDocuments = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`rounded-full px-4 py-1.5 transition-all whitespace-nowrap ${
                 activeTab === tab.id
-                  ? "bg-[#1E5642] text-white shadow-sm"
+                  ? "bg-[var(--secondary)] text-white shadow-sm"
                   : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
               }`}
             >
@@ -283,7 +283,7 @@ const UserMyDocuments = () => {
             placeholder="Search document name..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-full sm:w-60"
+            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-full sm:w-60"
           />
         </div>
       </div>
@@ -307,7 +307,7 @@ const UserMyDocuments = () => {
                 <tr key={doc.id} className="hover:bg-stone-50/60 transition-colors">
                   {/* Document Name */}
                   <td className="py-3.5 font-bold text-stone-900 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0">
                       <FileText size={16} />
                     </div>
                     <div>
@@ -332,7 +332,7 @@ const UserMyDocuments = () => {
                   {/* Verification Badge */}
                   <td className="py-3.5">
                     {doc.verified ? (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 border border-emerald-100">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[10px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
                         <CheckCircle2 size={11} />
                         Verified
                       </span>

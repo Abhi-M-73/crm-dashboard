@@ -97,7 +97,7 @@ const UserMonthlyAttendance = () => {
 
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition"
           >
             <Download size={14} />
             <span>Monthly Sheet</span>
@@ -108,7 +108,7 @@ const UserMonthlyAttendance = () => {
       {/* STATS OVERVIEW CARDS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0">
             <CalendarCheck size={20} />
           </div>
           <div>
@@ -118,7 +118,7 @@ const UserMonthlyAttendance = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0">
             <Clock size={20} />
           </div>
           <div>
@@ -159,13 +159,13 @@ const UserMonthlyAttendance = () => {
             <span className="font-bold text-stone-900">Calendar View</span>
             <div className="flex flex-wrap items-center gap-4 text-[11px] font-semibold text-stone-500">
               <span className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-[#1E5642]" /> Present
+                <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" /> Present
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="h-2 w-2 rounded-full bg-amber-500" /> Late
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-[#EA580C]" /> Leave
+                <span className="h-2 w-2 rounded-full bg-[var(--primary)]" /> Leave
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="h-2 w-2 rounded-full bg-stone-300" /> Weekend
@@ -198,18 +198,18 @@ const UserMonthlyAttendance = () => {
               const isSelected = selectedDay === dayNum;
               const isToday = dayNum === 9; // Today in context
 
-              let bgStyle = "bg-white border-stone-200/70 hover:border-[#EA580C]/40";
+              let bgStyle = "bg-white border-stone-200/70 hover:border-[var(--primary)]/40";
               let badgeStyle = "text-stone-700";
 
               if (record?.status === "present") {
-                bgStyle = "bg-emerald-50/40 border-emerald-100/80 hover:bg-emerald-50/80";
-                badgeStyle = "text-[#1E5642]";
+                bgStyle = "bg-[color-mix(in_srgb,var(--secondary-50)_40%,transparent)] border-[color-mix(in_srgb,var(--secondary-100)_80%,transparent)] hover:bg-[color-mix(in_srgb,var(--secondary-50)_80%,transparent)]";
+                badgeStyle = "text-[var(--secondary)]";
               } else if (record?.status === "late") {
                 bgStyle = "bg-amber-50/40 border-amber-200/80 hover:bg-amber-50/80";
                 badgeStyle = "text-amber-700";
               } else if (record?.status === "leave") {
-                bgStyle = "bg-orange-50/40 border-orange-200/80 hover:bg-orange-50/80";
-                badgeStyle = "text-[#EA580C]";
+                bgStyle = "bg-[var(--primary-50)]/40 border-[color-mix(in_srgb,var(--primary-200)_80%,transparent)] hover:bg-[var(--primary-50)]/80";
+                badgeStyle = "text-[var(--primary)]";
               } else if (record?.status === "weekend") {
                 bgStyle = "bg-[#FAF8F5] border-stone-100 opacity-60";
                 badgeStyle = "text-stone-400";
@@ -221,23 +221,23 @@ const UserMonthlyAttendance = () => {
                   type="button"
                   onClick={() => setSelectedDay(dayNum)}
                   className={`min-h-[78px] rounded-2xl p-2 flex flex-col justify-between text-left transition-all border shadow-2xs relative ${bgStyle} ${
-                    isSelected ? "ring-2 ring-[#EA580C] shadow-sm" : ""
+                    isSelected ? "ring-2 ring-[var(--primary)] shadow-sm" : ""
                   }`}
                 >
                   <div className="flex items-center justify-between w-full">
-                    <span className={`text-xs font-black ${isToday ? "h-5 w-5 rounded-full bg-[#EA580C] text-white flex items-center justify-center -ml-0.5 -mt-0.5 text-[10px]" : "text-stone-800"}`}>
+                    <span className={`text-xs font-black ${isToday ? "h-5 w-5 rounded-full bg-[var(--primary)] text-white flex items-center justify-center -ml-0.5 -mt-0.5 text-[10px]" : "text-stone-800"}`}>
                       {dayNum}
                     </span>
 
                     {/* Status Pill indicator */}
                     {record?.status === "present" && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#1E5642]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--secondary)]" />
                     )}
                     {record?.status === "late" && (
                       <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                     )}
                     {record?.status === "leave" && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#EA580C]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
                     )}
                   </div>
 
@@ -275,11 +275,11 @@ const UserMonthlyAttendance = () => {
               <span
                 className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold capitalize ${
                   selectedRecord.status === "present"
-                    ? "bg-emerald-50 text-emerald-700 border border-emerald-100"
+                    ? "bg-[var(--secondary-50)] text-[var(--secondary-700)] border border-[var(--secondary-100)]"
                     : selectedRecord.status === "late"
                     ? "bg-amber-50 text-amber-700 border border-amber-100"
                     : selectedRecord.status === "leave"
-                    ? "bg-orange-50 text-[#EA580C] border border-orange-100"
+                    ? "bg-[var(--primary-50)] text-[var(--primary)] border border-[var(--primary-100)]"
                     : "bg-stone-100 text-stone-500"
                 }`}
               >
@@ -305,12 +305,12 @@ const UserMonthlyAttendance = () => {
             </div>
 
             {/* Effective Duration */}
-            <div className="p-4 rounded-2xl bg-orange-50/50 border border-orange-100/80 flex items-center justify-between">
+            <div className="p-4 rounded-2xl bg-[var(--primary-50)]/50 border border-[var(--primary-100)]/80 flex items-center justify-between">
               <div>
                 <span className="text-[11px] text-stone-500 font-semibold block">Total Active Shift</span>
-                <span className="text-xl font-black text-[#EA580C] block">{selectedRecord.hours}</span>
+                <span className="text-xl font-black text-[var(--primary)] block">{selectedRecord.hours}</span>
               </div>
-              <Clock className="text-[#EA580C]" size={22} />
+              <Clock className="text-[var(--primary)]" size={22} />
             </div>
 
             {/* Shift Note & Regularization */}
@@ -333,7 +333,7 @@ const UserMonthlyAttendance = () => {
           {/* QUICK POLICY HELPER */}
           <div className="rounded-[32px] border border-stone-200/70 bg-white p-5 shadow-sm space-y-2.5">
             <div className="flex items-center gap-2 text-xs font-bold text-stone-800">
-              <FileText size={15} className="text-[#1E5642]" />
+              <FileText size={15} className="text-[var(--secondary)]" />
               <span>Shift Attendance Policy</span>
             </div>
             <p className="text-[11px] text-stone-400 leading-relaxed">

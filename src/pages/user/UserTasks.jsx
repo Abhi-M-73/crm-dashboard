@@ -121,7 +121,7 @@ const UserTasks = () => {
 
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Plus size={15} />
             <span>Create Task Ticket</span>
@@ -132,7 +132,7 @@ const UserTasks = () => {
       {/* 2. STATS OVERVIEW CARDS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <ListTodo size={20} />
           </div>
           <div>
@@ -142,7 +142,7 @@ const UserTasks = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <CheckCircle2 size={20} />
           </div>
           <div>
@@ -182,7 +182,7 @@ const UserTasks = () => {
               <h3 className="text-base font-extrabold text-stone-900">Sprint Story Points</h3>
               <p className="text-[11px] text-stone-400">Total 32 story points committed</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               On Pace
             </span>
           </div>
@@ -203,13 +203,13 @@ const UserTasks = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="38"
@@ -227,10 +227,10 @@ const UserTasks = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-500 pt-3 border-t border-stone-100 font-medium">
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#1E5642]" /> 25 Pts Delivered
+              <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" /> 25 Pts Delivered
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" /> 7 Pts In Flight
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" /> 7 Pts In Flight
             </span>
           </div>
         </div>
@@ -242,7 +242,7 @@ const UserTasks = () => {
               <h3 className="text-base font-extrabold text-stone-900">Sprint Focus & Deadlines</h3>
               <p className="text-[11px] text-stone-400">Milestones required before sprint freeze</p>
             </div>
-            <span className="text-xs font-bold text-[#EA580C] bg-orange-50 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-[var(--primary)] bg-[var(--primary-50)] px-3 py-1 rounded-full">
               4 Days Remaining
             </span>
           </div>
@@ -250,7 +250,7 @@ const UserTasks = () => {
           <div className="space-y-3 pt-1">
             <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-stone-100 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="h-9 w-9 rounded-xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0">
+                <div className="h-9 w-9 rounded-xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0">
                   <CheckSquare size={17} />
                 </div>
                 <div>
@@ -258,7 +258,7 @@ const UserTasks = () => {
                   <p className="text-[10px] text-stone-400 mt-0.5">Fintech Mobile App V2 &bull; Due Tomorrow, 5 PM</p>
                 </div>
               </div>
-              <span className="text-xs font-bold text-[#1E5642] bg-[#E1EBE6] px-2.5 py-0.5 rounded-full">
+              <span className="text-xs font-bold text-[var(--secondary)] bg-[var(--secondary-100)] px-2.5 py-0.5 rounded-full">
                 Ready to Merge
               </span>
             </div>
@@ -281,7 +281,7 @@ const UserTasks = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-400 pt-2 border-t border-stone-100 font-medium">
             <span>QA Lead: Sophia Patel</span>
-            <span className="text-[#EA580C] font-semibold cursor-pointer hover:underline">
+            <span className="text-[var(--primary)] font-semibold cursor-pointer hover:underline">
               Open Jira Board &rarr;
             </span>
           </div>
@@ -305,7 +305,7 @@ const UserTasks = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`rounded-full px-4 py-1.5 transition-all whitespace-nowrap ${
                 activeTab === tab.id
-                  ? "bg-[#1E5642] text-white shadow-sm"
+                  ? "bg-[var(--secondary)] text-white shadow-sm"
                   : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
               }`}
             >
@@ -321,7 +321,7 @@ const UserTasks = () => {
             placeholder="Search task by title or ID..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-full sm:w-64"
+            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-full sm:w-64"
           />
         </div>
       </div>
@@ -357,7 +357,7 @@ const UserTasks = () => {
                 } else if (task.status === "completed") {
                   badgeStyle = {
                     label: "Done",
-                    pill: "bg-emerald-50 text-emerald-700 border-emerald-200/60 font-semibold",
+                    pill: "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[color-mix(in_srgb,var(--secondary-200)_60%,transparent)] font-semibold",
                   };
                 } else if (task.status === "todo") {
                   badgeStyle = {
@@ -371,7 +371,7 @@ const UserTasks = () => {
                     {/* Task ID & Title */}
                     <td className="py-3.5 font-bold text-stone-900 max-w-sm">
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold text-[#EA580C] bg-orange-50 px-2 py-0.5 rounded-md">
+                        <span className="text-[10px] font-bold text-[var(--primary)] bg-[var(--primary-50)] px-2 py-0.5 rounded-md">
                           {task.id}
                         </span>
                         <span className="truncate block font-extrabold">{task.title}</span>
@@ -409,7 +409,7 @@ const UserTasks = () => {
                         <span className="font-bold">{task.subtasksCompleted}/{task.totalSubtasks}</span>
                         <div className="w-14 bg-stone-100 h-1.5 rounded-full overflow-hidden">
                           <div
-                            className="bg-[#1E5642] h-full rounded-full"
+                            className="bg-[var(--secondary)] h-full rounded-full"
                             style={{ width: `${(task.subtasksCompleted / task.totalSubtasks) * 100}%` }}
                           />
                         </div>

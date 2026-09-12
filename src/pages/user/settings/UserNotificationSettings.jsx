@@ -63,7 +63,7 @@ const UserNotificationSettings = () => {
         <button
           type="button"
           onClick={handleSave}
-          className="inline-flex items-center gap-2 rounded-2xl bg-[#EA580C] px-5 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-[#d94e07] active:scale-[0.98]"
+          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] px-5 py-2.5 text-xs font-bold text-white shadow-sm transition hover:bg-[var(--primary-700)] active:scale-[0.98]"
         >
           <Save size={15} />
           <span>Save Changes</span>
@@ -75,7 +75,7 @@ const UserNotificationSettings = () => {
         {/* 1. EMAIL NOTIFICATIONS */}
         <div className="rounded-[32px] border border-stone-200/70 bg-white p-6 sm:p-7 shadow-sm space-y-4">
           <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#E1EBE6] text-[#1E5642]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)]">
               <Mail size={18} />
             </div>
             <div>
@@ -92,7 +92,7 @@ const UserNotificationSettings = () => {
             {/* Leave Approvals */}
             <div className="flex items-center justify-between p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100">
               <div className="flex items-start gap-3">
-                <CalendarCheck size={18} className="text-[#1E5642] mt-0.5 shrink-0" />
+                <CalendarCheck size={18} className="text-[var(--secondary)] mt-0.5 shrink-0" />
                 <div>
                   <h3 className="text-xs font-extrabold text-stone-900">Leave Approvals</h3>
                   <p className="text-xs text-stone-400 mt-0.5">
@@ -107,14 +107,14 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("leaveApprovals")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
 
             {/* Payroll Alerts */}
             <div className="flex items-center justify-between p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100">
               <div className="flex items-start gap-3">
-                <BadgeDollarSign size={18} className="text-[#EA580C] mt-0.5 shrink-0" />
+                <BadgeDollarSign size={18} className="text-[var(--primary)] mt-0.5 shrink-0" />
                 <div>
                   <h3 className="text-xs font-extrabold text-stone-900">Payroll Alerts</h3>
                   <p className="text-xs text-stone-400 mt-0.5">
@@ -129,7 +129,7 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("payrollAlerts")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
 
@@ -151,7 +151,7 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("attendanceReminders")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
           </div>
@@ -160,7 +160,7 @@ const UserNotificationSettings = () => {
         {/* 2. PUSH NOTIFICATIONS */}
         <div className="rounded-[32px] border border-stone-200/70 bg-white p-6 sm:p-7 shadow-sm space-y-4">
           <div className="flex items-center gap-3 border-b border-stone-100 pb-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-orange-50 text-[#EA580C]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--primary-50)] text-[var(--primary)]">
               <Bell size={18} />
             </div>
             <div>
@@ -177,7 +177,7 @@ const UserNotificationSettings = () => {
             {/* New Messages */}
             <div className="flex items-center justify-between p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100">
               <div className="flex items-start gap-3">
-                <MessageSquare size={18} className="text-[#EA580C] mt-0.5 shrink-0" />
+                <MessageSquare size={18} className="text-[var(--primary)] mt-0.5 shrink-0" />
                 <div>
                   <h3 className="text-xs font-extrabold text-stone-900">New Messages</h3>
                   <p className="text-xs text-stone-400 mt-0.5">
@@ -192,14 +192,14 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("newMessages")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
 
             {/* Task Updates */}
             <div className="flex items-center justify-between p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100">
               <div className="flex items-start gap-3">
-                <Layers size={18} className="text-[#1E5642] mt-0.5 shrink-0" />
+                <Layers size={18} className="text-[var(--secondary)] mt-0.5 shrink-0" />
                 <div>
                   <h3 className="text-xs font-extrabold text-stone-900">Task Updates</h3>
                   <p className="text-xs text-stone-400 mt-0.5">
@@ -214,7 +214,7 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("taskUpdates")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
 
@@ -236,7 +236,7 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("companyAnnouncements")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
           </div>
@@ -277,14 +277,14 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("criticalAlerts")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
 
             {/* OTP & Authentication */}
             <div className="flex items-center justify-between p-4 rounded-2xl bg-[#FAF8F5] border border-stone-100">
               <div className="flex items-start gap-3">
-                <KeyRound size={18} className="text-[#1E5642] mt-0.5 shrink-0" />
+                <KeyRound size={18} className="text-[var(--secondary)] mt-0.5 shrink-0" />
                 <div>
                   <h3 className="text-xs font-extrabold text-stone-900">OTP & Authentication</h3>
                   <p className="text-xs text-stone-400 mt-0.5">
@@ -299,7 +299,7 @@ const UserNotificationSettings = () => {
                   onChange={() => handleToggle("otpAuthentication")}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+                <div className="w-11 h-6 bg-stone-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
               </label>
             </div>
           </div>

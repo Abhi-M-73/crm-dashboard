@@ -82,7 +82,7 @@ const UserPasswordSettings = () => {
         <button
           type="button"
           onClick={handleSubmit}
-          className="flex items-center gap-2 rounded-2xl bg-[#EA580C] px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+          className="flex items-center gap-2 rounded-2xl bg-[var(--primary)] px-5 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
         >
           <Save size={15} />
           <span>Save New Password</span>
@@ -92,7 +92,7 @@ const UserPasswordSettings = () => {
       {/* 2. STATS PILL COUNTERS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <KeyRound size={20} />
           </div>
           <div>
@@ -102,7 +102,7 @@ const UserPasswordSettings = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <ShieldCheck size={20} />
           </div>
           <div>
@@ -142,7 +142,7 @@ const UserPasswordSettings = () => {
               <h3 className="text-base font-extrabold text-stone-900">Credential Health</h3>
               <p className="text-[11px] text-stone-400">Password complexity & entropy evaluation</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               Optimal
             </span>
           </div>
@@ -163,13 +163,13 @@ const UserPasswordSettings = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="24"
@@ -187,10 +187,10 @@ const UserPasswordSettings = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-500 pt-3 border-t border-stone-100 font-medium">
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#1E5642]" /> AES-256 Hash
+              <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" /> AES-256 Hash
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#EA580C]" /> 90-Day Rotation
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" /> 90-Day Rotation
             </span>
           </div>
         </div>
@@ -217,7 +217,7 @@ const UserPasswordSettings = () => {
                   onChange={handleInputChange}
                   placeholder="Enter current password"
                   required
-                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 pl-10 pr-10 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 pl-10 pr-10 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                 />
                 <button
                   type="button"
@@ -243,7 +243,7 @@ const UserPasswordSettings = () => {
                   onChange={handleInputChange}
                   placeholder="Create new password"
                   required
-                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 pl-10 pr-10 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 pl-10 pr-10 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                 />
                 <button
                   type="button"
@@ -269,7 +269,7 @@ const UserPasswordSettings = () => {
                   onChange={handleInputChange}
                   placeholder="Repeat new password"
                   required
-                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 pl-10 pr-10 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:bg-white transition"
+                  className="w-full rounded-2xl border border-stone-200 bg-[#FAF8F5]/60 py-2.5 pl-10 pr-10 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:bg-white transition"
                 />
                 <button
                   type="button"
@@ -283,20 +283,20 @@ const UserPasswordSettings = () => {
 
             {/* Requirements Checklist */}
             <div className="grid grid-cols-2 gap-2 pt-1 text-[11px]">
-              <div className={`flex items-center gap-1.5 ${validations.length ? "text-emerald-700 font-bold" : "text-stone-400"}`}>
-                <CheckCircle2 size={13} className={validations.length ? "text-emerald-600" : "text-stone-300"} />
+              <div className={`flex items-center gap-1.5 ${validations.length ? "text-[var(--secondary-700)] font-bold" : "text-stone-400"}`}>
+                <CheckCircle2 size={13} className={validations.length ? "text-[var(--secondary-600)]" : "text-stone-300"} />
                 <span>At least 8 characters</span>
               </div>
-              <div className={`flex items-center gap-1.5 ${validations.hasUpper ? "text-emerald-700 font-bold" : "text-stone-400"}`}>
-                <CheckCircle2 size={13} className={validations.hasUpper ? "text-emerald-600" : "text-stone-300"} />
+              <div className={`flex items-center gap-1.5 ${validations.hasUpper ? "text-[var(--secondary-700)] font-bold" : "text-stone-400"}`}>
+                <CheckCircle2 size={13} className={validations.hasUpper ? "text-[var(--secondary-600)]" : "text-stone-300"} />
                 <span>One uppercase letter (A-Z)</span>
               </div>
-              <div className={`flex items-center gap-1.5 ${validations.hasNumber ? "text-emerald-700 font-bold" : "text-stone-400"}`}>
-                <CheckCircle2 size={13} className={validations.hasNumber ? "text-emerald-600" : "text-stone-300"} />
+              <div className={`flex items-center gap-1.5 ${validations.hasNumber ? "text-[var(--secondary-700)] font-bold" : "text-stone-400"}`}>
+                <CheckCircle2 size={13} className={validations.hasNumber ? "text-[var(--secondary-600)]" : "text-stone-300"} />
                 <span>One numeric digit (0-9)</span>
               </div>
-              <div className={`flex items-center gap-1.5 ${validations.matches ? "text-emerald-700 font-bold" : "text-stone-400"}`}>
-                <CheckCircle2 size={13} className={validations.matches ? "text-emerald-600" : "text-stone-300"} />
+              <div className={`flex items-center gap-1.5 ${validations.matches ? "text-[var(--secondary-700)] font-bold" : "text-stone-400"}`}>
+                <CheckCircle2 size={13} className={validations.matches ? "text-[var(--secondary-600)]" : "text-stone-300"} />
                 <span>Passwords match exactly</span>
               </div>
             </div>
@@ -312,7 +312,7 @@ const UserPasswordSettings = () => {
         <div className="rounded-[32px] border border-stone-200/70 bg-white p-6 shadow-sm flex flex-col justify-between space-y-4">
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="h-11 w-11 rounded-2xl bg-emerald-50 text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+              <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-50)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
                 <Smartphone size={20} />
               </div>
               <div>
@@ -328,12 +328,12 @@ const UserPasswordSettings = () => {
                 onChange={() => setTwoFactorAuth(!twoFactorAuth)}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-stone-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EA580C]"></div>
+              <div className="w-11 h-6 bg-stone-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
             </label>
           </div>
 
           <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-stone-100 text-xs text-stone-600 leading-relaxed">
-            Status: <span className="font-bold text-[#1E5642]">Enabled</span>. A verification passcode will be prompted whenever you sign in from an unrecognized browser or IP address.
+            Status: <span className="font-bold text-[var(--secondary)]">Enabled</span>. A verification passcode will be prompted whenever you sign in from an unrecognized browser or IP address.
           </div>
         </div>
 
@@ -362,7 +362,7 @@ const UserPasswordSettings = () => {
                   <span className="text-[10px] text-stone-400">San Francisco, US &bull; 192.168.1.45</span>
                 </div>
               </div>
-              <span className="rounded-full bg-emerald-50 text-emerald-700 px-2 py-0.5 text-[10px] font-bold border border-emerald-100">
+              <span className="rounded-full bg-[var(--secondary-50)] text-[var(--secondary-700)] px-2 py-0.5 text-[10px] font-bold border border-[var(--secondary-100)]">
                 This Device
               </span>
             </div>

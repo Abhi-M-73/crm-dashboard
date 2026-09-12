@@ -128,7 +128,7 @@ const AdminProjects = () => {
 
         <button
           onClick={() => setIsModalOpen(true)}
-          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-orange-500/20 transition-all hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-[color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all hover:-translate-y-0.5"
         >
           <Plus size={16} />
           <span>Create Project</span>
@@ -140,26 +140,26 @@ const AdminProjects = () => {
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Active Projects</p>
           <p className="text-2xl sm:text-3xl font-black text-stone-900 mt-1">{projects.length}</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">Across 4 squads</span>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">Across 4 squads</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Total Budget</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#1E5642] mt-1">$160,000</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary)] mt-1">$160,000</p>
           <span className="text-[11px] text-stone-500 font-medium">Allocated for Q1</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">In Progress</p>
-          <p className="text-2xl sm:text-3xl font-black text-indigo-700 mt-1">
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary-700)] mt-1">
             {projects.filter((p) => p.status === "In Progress").length}
           </p>
-          <span className="text-[11px] text-emerald-600 font-semibold">On track to deliver</span>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">On track to deliver</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Completed</p>
-          <p className="text-2xl sm:text-3xl font-black text-emerald-700 mt-1">
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary-700)] mt-1">
             {projects.filter((p) => p.status === "Completed").length}
           </p>
           <span className="text-[11px] text-stone-500 font-medium">100% QA verified</span>
@@ -201,7 +201,7 @@ const AdminProjects = () => {
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold border ${
                     proj.status === "Completed"
-                      ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                      ? "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[var(--secondary-200)]"
                       : proj.status === "Planning"
                       ? "bg-blue-50 text-blue-700 border-blue-200"
                       : "bg-amber-50 text-amber-700 border-amber-200"
@@ -228,7 +228,7 @@ const AdminProjects = () => {
 
             <div className="mt-6 pt-5 border-t border-stone-100 flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
-                <div className="h-7 w-7 rounded-full bg-[#1E5642] text-white flex items-center justify-center text-[10px] font-bold">
+                <div className="h-7 w-7 rounded-full bg-[var(--secondary)] text-white flex items-center justify-center text-[10px] font-bold">
                   {proj.leadAvatar}
                 </div>
                 <div>

@@ -105,7 +105,7 @@ const AdminDocuments = () => {
 
         <button
           onClick={handlePublish}
-          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-orange-500/20 transition-all hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-[color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all hover:-translate-y-0.5"
         >
           <Upload size={16} />
           <span>Publish New Policy</span>
@@ -116,26 +116,26 @@ const AdminDocuments = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Pending Verification</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#EA580C] mt-1">{verifications.length}</p>
-          <span className="text-[11px] text-[#EA580C] font-semibold">Action required</span>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary)] mt-1">{verifications.length}</p>
+          <span className="text-[11px] text-[var(--primary)] font-semibold">Action required</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Verified Employee Files</p>
-          <p className="text-2xl sm:text-3xl font-black text-emerald-700 mt-1">249</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary-700)] mt-1">249</p>
           <span className="text-[11px] text-stone-500 font-medium">SOC-2 compliant</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Active Company Policies</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#1E5642] mt-1">8</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary)] mt-1">8</p>
           <span className="text-[11px] text-stone-500 font-medium">Published handbook</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Acknowledgment Rate</p>
-          <p className="text-2xl sm:text-3xl font-black text-indigo-700 mt-1">98%</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">High compliance</span>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary-700)] mt-1">98%</p>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">High compliance</span>
         </div>
       </div>
 
@@ -151,7 +151,7 @@ const AdminDocuments = () => {
         >
           <span>Employee Document Queue</span>
           {verifications.length > 0 && (
-            <span className="ml-2 rounded-full bg-[#EA580C] text-white px-1.5 py-0.2 text-[10px] font-bold">
+            <span className="ml-2 rounded-full bg-[var(--primary)] text-white px-1.5 py-0.2 text-[10px] font-bold">
               {verifications.length}
             </span>
           )}
@@ -174,7 +174,7 @@ const AdminDocuments = () => {
         <div className="overflow-hidden rounded-[24px] border border-stone-200 bg-white shadow-xs">
           {verifications.length === 0 ? (
             <div className="p-12 text-center text-stone-400">
-              <CheckCircle2 size={36} className="mx-auto text-emerald-500 mb-2" />
+              <CheckCircle2 size={36} className="mx-auto text-[var(--secondary-500)] mb-2" />
               <p className="font-bold text-stone-700">All caught up!</p>
               <p className="text-xs">No pending document verifications.</p>
             </div>
@@ -183,7 +183,7 @@ const AdminDocuments = () => {
               {verifications.map((item) => (
                 <div key={item.id} className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-start gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-orange-50 text-[var(--primary)] flex items-center justify-center shrink-0">
+                    <div className="h-10 w-10 rounded-xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0">
                       <FileText size={20} />
                     </div>
                     <div>
@@ -203,7 +203,7 @@ const AdminDocuments = () => {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleVerify(item.id, true)}
-                      className="inline-flex items-center gap-1 rounded-xl bg-emerald-600 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-emerald-700 transition"
+                      className="inline-flex items-center gap-1 rounded-xl bg-[var(--secondary-600)] px-3.5 py-1.5 text-xs font-bold text-white hover:bg-[var(--secondary-700)] transition"
                     >
                       <Check size={13} />
                       <span>Approve & Verify</span>
@@ -243,7 +243,7 @@ const AdminDocuments = () => {
                     <tr key={pol.id} className="hover:bg-stone-50/60 transition">
                       <td className="px-5 py-3.5">
                         <div className="flex items-center gap-2.5">
-                          <FileCheck2 size={16} className="text-[#1E5642]" />
+                          <FileCheck2 size={16} className="text-[var(--secondary)]" />
                           <div>
                             <p className="font-bold text-stone-900">{pol.title}</p>
                             <p className="text-[10px] text-stone-400 font-mono">{pol.fileName}</p>
@@ -265,7 +265,7 @@ const AdminDocuments = () => {
                         <div className="flex items-center gap-2">
                           <div className="h-1.5 w-24 rounded-full bg-stone-100 overflow-hidden">
                             <div
-                              className="h-full rounded-full bg-emerald-500"
+                              className="h-full rounded-full bg-[var(--secondary-500)]"
                               style={{ width: `${pol.signedPct}%` }}
                             />
                           </div>
@@ -278,7 +278,7 @@ const AdminDocuments = () => {
                           onClick={() => toast.success(`Downloading ${pol.fileName}`)}
                           className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 px-3 py-1.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 transition"
                         >
-                          <DownloadCloud size={13} className="text-[#EA580C]" />
+                          <DownloadCloud size={13} className="text-[var(--primary)]" />
                           <span>Download</span>
                         </button>
                       </td>

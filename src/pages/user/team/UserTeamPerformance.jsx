@@ -105,7 +105,7 @@ const UserTeamPerformance = () => {
 
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Download size={14} />
             <span>Sprint Report</span>
@@ -116,7 +116,7 @@ const UserTeamPerformance = () => {
       {/* 2. STATS OVERVIEW CARDS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-[#E1EBE6] text-[#1E5642] flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-100)] text-[var(--secondary)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <Zap size={20} />
           </div>
           <div>
@@ -126,7 +126,7 @@ const UserTeamPerformance = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <TrendingUp size={20} />
           </div>
           <div>
@@ -169,10 +169,10 @@ const UserTeamPerformance = () => {
             
             <div className="flex items-center gap-4 text-xs font-semibold">
               <span className="flex items-center gap-1.5 text-stone-700">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#1E5642]" /> Delivered
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--secondary)]" /> Delivered
               </span>
               <span className="flex items-center gap-1.5 text-stone-700">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#EA580C]" /> Planned Scope
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--primary)]" /> Planned Scope
               </span>
             </div>
           </div>
@@ -192,8 +192,8 @@ const UserTeamPerformance = () => {
                 <svg viewBox="0 0 500 140" className="w-full h-full overflow-visible" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="teamVelocityGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#EA580C" stopOpacity="0.25" />
-                      <stop offset="100%" stopColor="#EA580C" stopOpacity="0.0" />
+                      <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.25" />
+                      <stop offset="100%" stopColor="var(--primary)" stopOpacity="0.0" />
                     </linearGradient>
                   </defs>
 
@@ -201,7 +201,7 @@ const UserTeamPerformance = () => {
                   <path
                     d="M 10 120 L 100 95 L 200 70 L 300 45 L 400 25 L 490 15"
                     fill="none"
-                    stroke="#EA580C"
+                    stroke="var(--primary)"
                     strokeWidth="2.5"
                     strokeDasharray="4 4"
                   />
@@ -214,13 +214,13 @@ const UserTeamPerformance = () => {
                   <path
                     d="M 10 130 Q 70 120 120 100 T 240 75 T 350 40 T 450 22"
                     fill="none"
-                    stroke="#1E5642"
+                    stroke="var(--secondary)"
                     strokeWidth="3"
                   />
 
                   {/* Marker Pin */}
-                  <circle cx="350" cy="40" r="4.5" fill="#1E5642" stroke="#fff" strokeWidth="2" />
-                  <line x1="350" y1="40" x2="350" y2="135" stroke="#1E5642" strokeDasharray="3 3" strokeWidth="1.5" />
+                  <circle cx="350" cy="40" r="4.5" fill="var(--secondary)" stroke="#fff" strokeWidth="2" />
+                  <line x1="350" y1="40" x2="350" y2="135" stroke="var(--secondary)" strokeDasharray="3 3" strokeWidth="1.5" />
                 </svg>
 
                 <div className="absolute top-[20%] left-[70%] -translate-x-1/2 -translate-y-full bg-white border border-stone-200 px-2 py-0.5 rounded-lg shadow-sm text-[11px] font-bold text-stone-800">
@@ -248,7 +248,7 @@ const UserTeamPerformance = () => {
               <h3 className="text-base font-extrabold text-stone-900">Sprint Quality Index</h3>
               <p className="text-[11px] text-stone-400">PRs, test coverage & bug reopen rates</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               Optimal
             </span>
           </div>
@@ -269,13 +269,13 @@ const UserTeamPerformance = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="28"
@@ -295,11 +295,11 @@ const UserTeamPerformance = () => {
           <div className="grid grid-cols-2 gap-2 text-center pt-2 border-t border-stone-100">
             <div className="p-2 rounded-xl bg-[#FAF8F5] border border-stone-100">
               <span className="text-[10px] text-stone-400 font-semibold block">PR Reopen Rate</span>
-              <span className="text-xs font-black text-[#1E5642]">2.1% (Low)</span>
+              <span className="text-xs font-black text-[var(--secondary)]">2.1% (Low)</span>
             </div>
             <div className="p-2 rounded-xl bg-[#FAF8F5] border border-stone-100">
               <span className="text-[10px] text-stone-400 font-semibold block">Zero-Bug Release</span>
-              <span className="text-xs font-black text-[#EA580C]">3 Consecutive</span>
+              <span className="text-xs font-black text-[var(--primary)]">3 Consecutive</span>
             </div>
           </div>
         </div>
@@ -364,7 +364,7 @@ const UserTeamPerformance = () => {
                   <td className="py-3.5 font-semibold text-stone-700">{member.reviewsDone} Reviews</td>
 
                   {/* On-Time Rate */}
-                  <td className="py-3.5 font-bold text-[#1E5642]">{member.onTimeDelivery}</td>
+                  <td className="py-3.5 font-bold text-[var(--secondary)]">{member.onTimeDelivery}</td>
 
                   {/* Impact Rating */}
                   <td className="py-3.5">

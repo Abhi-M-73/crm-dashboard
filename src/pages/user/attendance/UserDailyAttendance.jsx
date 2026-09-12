@@ -120,7 +120,7 @@ const UserDailyAttendance = () => {
         <div className="lg:col-span-5 rounded-[32px] border border-stone-200/70 bg-white p-6 sm:p-7 shadow-sm flex flex-col justify-between space-y-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-orange-50 text-[#EA580C]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--primary-50)] text-[var(--primary)]">
                 <Clock size={18} />
               </div>
               <div>
@@ -131,10 +131,10 @@ const UserDailyAttendance = () => {
 
             <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[11px] font-bold ${
               isPunchedIn
-                ? "bg-emerald-50 text-emerald-600 border border-emerald-100"
+                ? "bg-[var(--secondary-50)] text-[var(--secondary-600)] border border-[var(--secondary-100)]"
                 : "bg-stone-100 text-stone-500"
             }`}>
-              <span className={`h-1.5 w-1.5 rounded-full ${isPunchedIn ? "bg-emerald-500 animate-pulse" : "bg-stone-400"}`} />
+              <span className={`h-1.5 w-1.5 rounded-full ${isPunchedIn ? "bg-[var(--secondary-500)] animate-pulse" : "bg-stone-400"}`} />
               {isPunchedIn ? "On Duty" : "Off Duty"}
             </span>
           </div>
@@ -157,7 +157,7 @@ const UserDailyAttendance = () => {
             </div>
             <div>
               <span className="text-[10px] text-stone-400 font-semibold block uppercase">Logged Duration</span>
-              <span className="font-extrabold text-[#1E5642] text-sm mt-0.5 block">5h 18m</span>
+              <span className="font-extrabold text-[var(--secondary)] text-sm mt-0.5 block">5h 18m</span>
             </div>
           </div>
 
@@ -168,8 +168,8 @@ const UserDailyAttendance = () => {
               onClick={() => setIsPunchedIn(!isPunchedIn)}
               className={`flex-1 py-3 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition active:scale-[0.98] ${
                 isPunchedIn
-                  ? "bg-[#EA580C] hover:bg-[#d94e07] text-white"
-                  : "bg-[#1E5642] hover:bg-[#164132] text-white"
+                  ? "bg-[var(--primary)] hover:bg-[var(--primary-700)] text-white"
+                  : "bg-[var(--secondary)] hover:bg-[#164132] text-white"
               }`}
             >
               <Fingerprint size={16} />
@@ -193,7 +193,7 @@ const UserDailyAttendance = () => {
               <h3 className="text-sm font-extrabold text-stone-900">Attendance Meter</h3>
               <p className="text-[11px] text-stone-400">Total 22 Working days scheduled</p>
             </div>
-            <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 border border-emerald-100">
+            <span className="rounded-full bg-[var(--secondary-50)] px-3 py-1 text-xs font-bold text-[var(--secondary-700)] border border-[var(--secondary-100)]">
               Good Standing
             </span>
           </div>
@@ -217,13 +217,13 @@ const UserDailyAttendance = () => {
                 />
 
                 {/* Inner Track (Green) */}
-                <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+                <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
                 <circle
                   cx="60"
                   cy="60"
                   r="38"
                   fill="none"
-                  stroke="#1E5642"
+                  stroke="var(--secondary)"
                   strokeWidth="8"
                   strokeDasharray="238"
                   strokeDashoffset="22"
@@ -243,7 +243,7 @@ const UserDailyAttendance = () => {
             <div className="md:col-span-7 grid grid-cols-2 gap-3">
               <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-stone-100">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="h-2 w-2 rounded-full bg-[#1E5642]" />
+                  <span className="h-2 w-2 rounded-full bg-[var(--secondary)]" />
                   <span className="text-[11px] font-semibold text-stone-500">Present (On-Time)</span>
                 </div>
                 <span className="text-xl font-black text-stone-900 block">20 Days</span>
@@ -252,7 +252,7 @@ const UserDailyAttendance = () => {
 
               <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-stone-100">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="h-2 w-2 rounded-full bg-[#EA580C]" />
+                  <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
                   <span className="text-[11px] font-semibold text-stone-500">Late Arrivals</span>
                 </div>
                 <span className="text-xl font-black text-stone-900 block">01 Day</span>
@@ -270,7 +270,7 @@ const UserDailyAttendance = () => {
 
               <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-stone-100">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                  <span className="h-2 w-2 rounded-full bg-[var(--secondary-500)]" />
                   <span className="text-[11px] font-semibold text-stone-500">Overtime Logged</span>
                 </div>
                 <span className="text-xl font-black text-stone-900 block">+4.8 hrs</span>
@@ -281,7 +281,7 @@ const UserDailyAttendance = () => {
 
           <div className="flex items-center justify-between text-xs text-stone-400 pt-3 border-t border-stone-100 font-medium">
             <span>Grace period: 15 mins allowance</span>
-            <span className="text-[#EA580C] font-semibold cursor-pointer hover:underline">
+            <span className="text-[var(--primary)] font-semibold cursor-pointer hover:underline">
               View Leave Policies &rarr;
             </span>
           </div>
@@ -324,21 +324,21 @@ const UserDailyAttendance = () => {
                   <td className="py-3.5 font-semibold text-stone-700">{row.checkOut}</td>
                   
                   <td className="py-3.5 font-semibold text-stone-800">
-                    <span className={row.workHours.includes("Running") ? "text-[#1E5642]" : ""}>
+                    <span className={row.workHours.includes("Running") ? "text-[var(--secondary)]" : ""}>
                       {row.workHours}
                     </span>
                   </td>
 
-                  <td className="py-3.5 font-semibold text-emerald-600">{row.overtime}</td>
+                  <td className="py-3.5 font-semibold text-[var(--secondary-600)]">{row.overtime}</td>
 
                   <td className="py-3.5">
                     <span
                       className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-bold ${
                         row.status === "Present"
-                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200/60"
+                          ? "bg-[var(--secondary-50)] text-[var(--secondary-700)] border border-[color-mix(in_srgb,var(--secondary-200)_60%,transparent)]"
                           : row.status === "Late"
                           ? "bg-amber-50 text-amber-700 border border-amber-200/60"
-                          : "bg-orange-50 text-[#EA580C] border border-orange-200/60"
+                          : "bg-[var(--primary-50)] text-[var(--primary)] border border-[color-mix(in_srgb,var(--primary-200)_60%,transparent)]"
                       }`}
                     >
                       {row.status}

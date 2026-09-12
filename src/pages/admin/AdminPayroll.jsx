@@ -116,7 +116,7 @@ const AdminPayroll = () => {
           <button
             onClick={handleRunPayroll}
             disabled={cycleRunning}
-            className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-orange-500/20 transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-[color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all hover:-translate-y-0.5"
           >
             <Sparkles size={16} />
             <span>{cycleRunning ? "Computing Cycle..." : "Run Monthly Payroll"}</span>
@@ -129,12 +129,12 @@ const AdminPayroll = () => {
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Total Monthly Run</p>
           <p className="text-2xl sm:text-3xl font-black text-stone-900 mt-1">$148,200</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">March 2026 Cycle</span>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">March 2026 Cycle</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Gross Salaries</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#1E5642] mt-1">$164,500</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary)] mt-1">$164,500</p>
           <span className="text-[11px] text-stone-500 font-medium">Base + Overtime</span>
         </div>
 
@@ -146,10 +146,10 @@ const AdminPayroll = () => {
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Disbursed Ratio</p>
-          <p className="text-2xl sm:text-3xl font-black text-indigo-700 mt-1">
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary-700)] mt-1">
             {payrollList.filter((p) => p.status === "Disbursed").length} / {payrollList.length}
           </p>
-          <span className="text-[11px] text-emerald-600 font-semibold">Direct Deposit Active</span>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">Direct Deposit Active</span>
         </div>
       </div>
 
@@ -177,7 +177,7 @@ const AdminPayroll = () => {
                   </td>
 
                   <td className="px-5 py-3.5 font-mono font-bold text-stone-800">{emp.base}</td>
-                  <td className="px-5 py-3.5 font-mono font-semibold text-emerald-700">{emp.bonus}</td>
+                  <td className="px-5 py-3.5 font-mono font-semibold text-[var(--secondary-700)]">{emp.bonus}</td>
                   <td className="px-5 py-3.5 font-mono font-semibold text-red-600">{emp.deductions}</td>
 
                   <td className="px-5 py-3.5 font-mono font-black text-stone-900 text-sm">
@@ -188,7 +188,7 @@ const AdminPayroll = () => {
                     <span
                       className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-bold border ${
                         emp.status === "Disbursed"
-                          ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                          ? "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[var(--secondary-200)]"
                           : "bg-amber-50 text-amber-700 border-amber-200"
                       }`}
                     >
@@ -202,7 +202,7 @@ const AdminPayroll = () => {
                       className="inline-flex items-center gap-1.5 rounded-xl border border-stone-200 px-3 py-1.5 text-xs font-semibold text-stone-700 hover:bg-stone-50 transition"
                       title="Download generated payslip"
                     >
-                      <DownloadCloud size={13} className="text-[#EA580C]" />
+                      <DownloadCloud size={13} className="text-[var(--primary)]" />
                       <span>PDF</span>
                     </button>
                   </td>

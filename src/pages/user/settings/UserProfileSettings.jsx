@@ -43,14 +43,14 @@ const UserProfileSettings = () => {
   return (
     <div className="w-full space-y-6 text-stone-800 antialiased font-sans p-6">
       <div className="relative overflow-hidden rounded-[32px] border border-stone-200/70 bg-white shadow-sm">
-        <div className="h-44 w-full bg-gradient-to-r from-[#12231E] via-[#1E5642] to-[#2B6D55] relative overflow-hidden">
+        <div className="h-44 w-full bg-gradient-to-r from-[var(--secondary-900)] via-[var(--secondary)] to-[var(--secondary-700)] relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.25),transparent_50%)]" />
           <div className="absolute right-8 top-6 flex gap-2 z-10">
             <button className="flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-semibold text-white backdrop-blur-md transition hover:bg-white/25">
               <Share2 size={13} />
               <span>Share Profile</span>
             </button>
-            <button className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-1.5 text-xs font-bold text-white shadow transition hover:bg-[#d94e07]">
+            <button className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-1.5 text-xs font-bold text-white shadow transition hover:bg-[var(--primary-700)]">
               <Edit3 size={13} />
               <span>Edit Details</span>
             </button>
@@ -70,7 +70,7 @@ const UserProfileSettings = () => {
               />
               <button
                 type="button"
-                className="absolute bottom-1 right-1 rounded-full bg-[#EA580C] p-1.5 text-white shadow hover:bg-[#d94e07] transition"
+                className="absolute bottom-1 right-1 rounded-full bg-[var(--primary)] p-1.5 text-white shadow hover:bg-[var(--primary-700)] transition"
                 title="Change Avatar"
               >
                 <Camera size={13} />
@@ -80,7 +80,7 @@ const UserProfileSettings = () => {
             {/* Quick Metrics Badges */}
             <div className="flex flex-wrap items-center gap-3 text-xs">
               <div className="flex items-center gap-2 rounded-2xl bg-[#F8F6F2] border border-stone-100 px-4 py-2">
-                <Briefcase size={16} className="text-[#1E5642]" />
+                <Briefcase size={16} className="text-[var(--secondary)]" />
                 <div>
                   <span className="block text-[10px] text-stone-400 font-medium">Tenure</span>
                   <span className="font-bold text-stone-800">{employee.experienceYears}</span>
@@ -88,7 +88,7 @@ const UserProfileSettings = () => {
               </div>
 
               <div className="flex items-center gap-2 rounded-2xl bg-[#F8F6F2] border border-stone-100 px-4 py-2">
-                <Clock size={16} className="text-[#EA580C]" />
+                <Clock size={16} className="text-[var(--primary)]" />
                 <div>
                   <span className="block text-[10px] text-stone-400 font-medium">Attendance</span>
                   <span className="font-bold text-stone-800">{employee.attendanceRate}</span>
@@ -96,7 +96,7 @@ const UserProfileSettings = () => {
               </div>
 
               <div className="flex items-center gap-2 rounded-2xl bg-[#F8F6F2] border border-stone-100 px-4 py-2">
-                <Award size={16} className="text-[#1E5642]" />
+                <Award size={16} className="text-[var(--secondary)]" />
                 <div>
                   <span className="block text-[10px] text-stone-400 font-medium">Efficiency</span>
                   <span className="font-bold text-stone-800">{employee.taskVelocity}</span>
@@ -112,17 +112,17 @@ const UserProfileSettings = () => {
               <h1 className="text-2xl font-black tracking-tight text-stone-900 sm:text-3xl">
                 {employee.name}
               </h1>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 border border-emerald-200/60">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--secondary-50)] px-3 py-1 text-xs font-bold text-[var(--secondary-700)] border border-[color-mix(in_srgb,var(--secondary-200)_60%,transparent)]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--secondary-500)]" />
                 {employee.status}
               </span>
-              <span className="rounded-full bg-orange-50 px-2.5 py-0.5 text-[11px] font-bold text-[#EA580C]">
+              <span className="rounded-full bg-[var(--primary-50)] px-2.5 py-0.5 text-[11px] font-bold text-[var(--primary)]">
                 {employee.empId}
               </span>
             </div>
 
             <p className="text-sm font-semibold text-stone-500">
-              {employee.role} &bull; <span className="text-[#1E5642]">{employee.department}</span>
+              {employee.role} &bull; <span className="text-[var(--secondary)]">{employee.department}</span>
             </p>
 
             <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-stone-500 pt-1 border-t border-stone-100">
@@ -154,7 +154,7 @@ const UserProfileSettings = () => {
               onClick={() => setActiveTab(tab)}
               className={`py-3.5 capitalize transition-all border-b-2 ${
                 activeTab === tab
-                  ? "border-[#EA580C] text-[#EA580C]"
+                  ? "border-[var(--primary)] text-[var(--primary)]"
                   : "border-transparent text-stone-400 hover:text-stone-700"
               }`}
             >
@@ -177,7 +177,7 @@ const UserProfileSettings = () => {
                 <h3 className="text-base font-bold text-stone-900">Quarterly Sprint Scorecard</h3>
                 <p className="text-[11px] text-stone-400">Q3 Performance evaluation based on JIRA velocity</p>
               </div>
-              <span className="rounded-full bg-[#1E5642]/10 text-[#1E5642] px-3 py-1 text-xs font-bold">
+              <span className="rounded-full bg-[color-mix(in_srgb,var(--secondary)_10%,transparent)] text-[var(--secondary)] px-3 py-1 text-xs font-bold">
                 Tier: Top 5%
               </span>
             </div>
@@ -199,7 +199,7 @@ const UserProfileSettings = () => {
                     strokeDashoffset="45"
                     strokeLinecap="round"
                   />
-                  <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+                  <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
                   <circle
                     cx="60"
                     cy="60"
@@ -229,7 +229,7 @@ const UserProfileSettings = () => {
                     <span className="text-stone-900">48 / 50</span>
                   </div>
                   <div className="h-2 w-full rounded-full bg-stone-100 overflow-hidden">
-                    <div className="h-full bg-[#1E5642] rounded-full" style={{ width: "96%" }} />
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{ width: "96%" }} />
                   </div>
                 </div>
 
@@ -239,7 +239,7 @@ const UserProfileSettings = () => {
                     <span className="text-stone-900">92%</span>
                   </div>
                   <div className="h-2 w-full rounded-full bg-stone-100 overflow-hidden">
-                    <div className="h-full bg-[#EA580C] rounded-full" style={{ width: "92%" }} />
+                    <div className="h-full bg-[var(--primary)] rounded-full" style={{ width: "92%" }} />
                   </div>
                 </div>
 
@@ -249,7 +249,7 @@ const UserProfileSettings = () => {
                     <span className="text-stone-900">4.9 / 5.0</span>
                   </div>
                   <div className="h-2 w-full rounded-full bg-stone-100 overflow-hidden">
-                    <div className="h-full bg-[#1E5642] rounded-full" style={{ width: "98%" }} />
+                    <div className="h-full bg-[var(--secondary)] rounded-full" style={{ width: "98%" }} />
                   </div>
                 </div>
               </div>
@@ -290,7 +290,7 @@ const UserProfileSettings = () => {
 
             <div className="space-y-4">
               <div className="flex items-start gap-3.5">
-                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-[#1E5642]">
+                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--secondary-50)] text-[var(--secondary)]">
                   <CheckCircle2 size={16} />
                 </div>
                 <div>
@@ -301,7 +301,7 @@ const UserProfileSettings = () => {
               </div>
 
               <div className="flex items-start gap-3.5">
-                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-[#EA580C]">
+                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--primary-50)] text-[var(--primary)]">
                   <Sparkles size={16} />
                 </div>
                 <div>
@@ -322,7 +322,7 @@ const UserProfileSettings = () => {
           <div className="rounded-[32px] border border-stone-200/70 bg-white p-6 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-base font-bold text-stone-900">Skills & Tech Stack</h3>
-              <span className="text-[10px] font-bold text-[#EA580C] bg-orange-50 px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold text-[var(--primary)] bg-[var(--primary-50)] px-2 py-0.5 rounded-full">
                 Verified
               </span>
             </div>
@@ -331,7 +331,7 @@ const UserProfileSettings = () => {
               {employee.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-xl bg-[#FAF8F5] border border-stone-200/60 px-3 py-1.5 text-xs font-semibold text-stone-700 hover:border-[#EA580C] transition"
+                  className="rounded-xl bg-[#FAF8F5] border border-stone-200/60 px-3 py-1.5 text-xs font-semibold text-stone-700 hover:border-[var(--primary)] transition"
                 >
                   {skill}
                 </span>

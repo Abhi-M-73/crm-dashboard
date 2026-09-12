@@ -134,7 +134,7 @@ const UserTeamAttendance = () => {
 
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded-full bg-[#EA580C] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#d94e07] transition active:scale-[0.98]"
+            className="flex items-center gap-1.5 rounded-full bg-[var(--primary)] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[var(--primary-700)] transition active:scale-[0.98]"
           >
             <Download size={14} />
             <span>Export Roster</span>
@@ -145,7 +145,7 @@ const UserTeamAttendance = () => {
       {/* 2. STATS PILL ROW */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--secondary-50)] text-[var(--secondary-700)] flex items-center justify-center shrink-0 border border-[var(--secondary-100)]">
             <CheckCircle2 size={20} />
           </div>
           <div>
@@ -175,7 +175,7 @@ const UserTeamAttendance = () => {
         </div>
 
         <div className="rounded-[28px] border border-stone-200/70 bg-white p-4 shadow-sm flex items-center gap-3.5">
-          <div className="h-11 w-11 rounded-2xl bg-orange-50 text-[#EA580C] flex items-center justify-center shrink-0 border border-orange-100">
+          <div className="h-11 w-11 rounded-2xl bg-[var(--primary-50)] text-[var(--primary)] flex items-center justify-center shrink-0 border border-[var(--primary-100)]">
             <AlertCircle size={20} />
           </div>
           <div>
@@ -192,7 +192,7 @@ const UserTeamAttendance = () => {
             <h3 className="text-base font-extrabold text-stone-900">Today's Pod Presence Index</h3>
             <p className="text-[11px] text-stone-400">Total 06 pod resources assigned for current sprint cycle</p>
           </div>
-          <span className="rounded-full bg-[#1E5642]/10 text-[#1E5642] px-3 py-1 text-xs font-bold">
+          <span className="rounded-full bg-[color-mix(in_srgb,var(--secondary)_10%,transparent)] text-[var(--secondary)] px-3 py-1 text-xs font-bold">
             91% Punctuality Rate
           </span>
         </div>
@@ -214,13 +214,13 @@ const UserTeamAttendance = () => {
                 strokeLinecap="round"
               />
 
-              <circle cx="60" cy="60" r="38" fill="none" stroke="#E1EBE6" strokeWidth="8" />
+              <circle cx="60" cy="60" r="38" fill="none" stroke="var(--secondary-100)" strokeWidth="8" />
               <circle
                 cx="60"
                 cy="60"
                 r="38"
                 fill="none"
-                stroke="#1E5642"
+                stroke="var(--secondary)"
                 strokeWidth="8"
                 strokeDasharray="238"
                 strokeDashoffset="25"
@@ -246,13 +246,13 @@ const UserTeamAttendance = () => {
 
             <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-stone-100">
               <span className="text-[11px] text-stone-400 font-semibold block">Average First In</span>
-              <span className="text-[#1E5642] font-extrabold text-sm mt-0.5 block">08:58 AM</span>
-              <span className="text-[10px] text-emerald-600 font-semibold mt-1 block">2 mins before cutoff</span>
+              <span className="text-[var(--secondary)] font-extrabold text-sm mt-0.5 block">08:58 AM</span>
+              <span className="text-[10px] text-[var(--secondary-600)] font-semibold mt-1 block">2 mins before cutoff</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-stone-100">
               <span className="text-[11px] text-stone-400 font-semibold block">Cumulative Logged</span>
-              <span className="text-[#EA580C] font-extrabold text-sm mt-0.5 block">26h 28m</span>
+              <span className="text-[var(--primary)] font-extrabold text-sm mt-0.5 block">26h 28m</span>
               <span className="text-[10px] text-stone-400 mt-1 block">Live calculated hours</span>
             </div>
           </div>
@@ -275,7 +275,7 @@ const UserTeamAttendance = () => {
               onClick={() => setStatusFilter(tab.id)}
               className={`rounded-full px-4 py-1.5 transition-all whitespace-nowrap ${
                 statusFilter === tab.id
-                  ? "bg-[#1E5642] text-white shadow-sm"
+                  ? "bg-[var(--secondary)] text-white shadow-sm"
                   : "text-stone-500 hover:text-stone-900 hover:bg-stone-200/50"
               }`}
             >
@@ -291,7 +291,7 @@ const UserTeamAttendance = () => {
             placeholder="Search member..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[#EA580C] focus:ring-2 focus:ring-[#EA580C]/10 transition shadow-sm w-full sm:w-56"
+            className="rounded-full border border-stone-200/80 bg-white py-1.5 pl-9 pr-4 text-xs font-medium text-stone-800 outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/10 transition shadow-sm w-full sm:w-56"
           />
         </div>
       </div>
@@ -316,8 +316,8 @@ const UserTeamAttendance = () => {
               {filteredTeam.map((emp) => {
                 let badgeStyle = {
                   label: "On Duty",
-                  pill: "bg-emerald-50 text-emerald-700 border-emerald-200/60",
-                  dot: "bg-emerald-500"
+                  pill: "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[color-mix(in_srgb,var(--secondary-200)_60%,transparent)]",
+                  dot: "bg-[var(--secondary-500)]"
                 };
 
                 if (emp.status === "break") {
@@ -329,8 +329,8 @@ const UserTeamAttendance = () => {
                 } else if (emp.status === "late") {
                   badgeStyle = {
                     label: "Late Arrival",
-                    pill: "bg-orange-50 text-[#EA580C] border-orange-200/60",
-                    dot: "bg-[#EA580C]"
+                    pill: "bg-[var(--primary-50)] text-[var(--primary)] border-[color-mix(in_srgb,var(--primary-200)_60%,transparent)]",
+                    dot: "bg-[var(--primary)]"
                   };
                 } else if (emp.status === "leave") {
                   badgeStyle = {
@@ -366,7 +366,7 @@ const UserTeamAttendance = () => {
 
                     {/* Work Hours (Live badge if running) */}
                     <td className="py-3.5">
-                      <span className={`font-bold ${emp.status !== "leave" ? "text-[#1E5642]" : "text-stone-400"}`}>
+                      <span className={`font-bold ${emp.status !== "leave" ? "text-[var(--secondary)]" : "text-stone-400"}`}>
                         {emp.loggedHours}
                       </span>
                     </td>

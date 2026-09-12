@@ -28,7 +28,7 @@ const initialEmployees = [
     type: "Full-Time",
     salary: "$5,400",
     joined: "15 Jan 2024",
-    avatarBg: "bg-emerald-600 text-white",
+    avatarBg: "bg-[var(--secondary-600)] text-white",
   },
   {
     id: 2,
@@ -135,7 +135,7 @@ const Users = () => {
       type: "Full-Time",
       salary: formData.salary,
       joined: "Just now",
-      avatarBg: "bg-indigo-600 text-white",
+      avatarBg: "bg-[var(--primary-600)] text-white",
     };
 
     setEmployees([newEmp, ...employees]);
@@ -164,7 +164,7 @@ const Users = () => {
 
         <button
           onClick={() => setIsModalOpen(true)}
-          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-orange-500/20 transition-all hover:-translate-y-0.5"
+          className="inline-flex items-center gap-2 rounded-2xl bg-[var(--primary)] hover:brightness-105 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-[color-mix(in_srgb,var(--primary)_20%,transparent)] transition-all hover:-translate-y-0.5"
         >
           <Plus size={16} />
           <span>Add New Employee</span>
@@ -176,25 +176,25 @@ const Users = () => {
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Total Workforce</p>
           <p className="text-2xl sm:text-3xl font-black text-stone-900 mt-1">{employees.length + 246}</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">+14 this quarter</span>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">+14 this quarter</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">Active Full-Time</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#1E5642] mt-1">218</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--secondary)] mt-1">218</p>
           <span className="text-[11px] text-stone-500 font-medium">Verified contracts</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">On Probation / Trainee</p>
-          <p className="text-2xl sm:text-3xl font-black text-[#EA580C] mt-1">24</p>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary)] mt-1">24</p>
           <span className="text-[11px] text-stone-500 font-medium">Review pending</span>
         </div>
 
         <div className="rounded-[24px] border border-stone-200 bg-stone-50/70 p-4 sm:p-5">
           <p className="text-xs font-semibold text-stone-500">On Leave Today</p>
-          <p className="text-2xl sm:text-3xl font-black text-indigo-700 mt-1">10</p>
-          <span className="text-[11px] text-emerald-600 font-semibold">96.1% attendance rate</span>
+          <p className="text-2xl sm:text-3xl font-black text-[var(--primary-700)] mt-1">10</p>
+          <span className="text-[11px] text-[var(--secondary-600)] font-semibold">96.1% attendance rate</span>
         </div>
       </div>
 
@@ -278,7 +278,7 @@ const Users = () => {
                       <span
                         className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-bold border ${
                           emp.status === "Active"
-                            ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                            ? "bg-[var(--secondary-50)] text-[var(--secondary-700)] border-[var(--secondary-200)]"
                             : emp.status === "On Leave"
                             ? "bg-amber-50 text-amber-700 border-amber-200"
                             : "bg-blue-50 text-blue-700 border-blue-200"
@@ -287,7 +287,7 @@ const Users = () => {
                         <span
                           className={`h-1.5 w-1.5 rounded-full ${
                             emp.status === "Active"
-                              ? "bg-emerald-500"
+                              ? "bg-[var(--secondary-500)]"
                               : emp.status === "On Leave"
                               ? "bg-amber-500"
                               : "bg-blue-500"
@@ -412,7 +412,7 @@ const Users = () => {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 rounded-xl bg-[var(--primary)] py-2.5 font-bold text-white hover:brightness-105 shadow-md shadow-orange-500/20"
+                  className="flex-1 rounded-xl bg-[var(--primary)] py-2.5 font-bold text-white hover:brightness-105 shadow-md shadow-[color-mix(in_srgb,var(--primary)_20%,transparent)]"
                 >
                   Create Employee
                 </button>
