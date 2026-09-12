@@ -23,8 +23,8 @@ const DashboardLayout = () => {
         </div>
         <main className="pt-2">
           <div className="relative">
-            <div className="absolute left-4 right-4 top-8 bottom-[-20px] rounded-[24px] bg-[#003421] z-0 shadow-[0_12px_25px_rgba(0,0,0,0.15)]" />
-            <div className="absolute left-2 right-2 top-4 bottom-[-10px] rounded-[24px] bg-[#f95b1c] z-1 shadow-[0_10px_20px_rgba(0,0,0,0.15)]" />
+            <div className="absolute left-4 right-4 top-8 bottom-[-20px] rounded-[24px] bg-[var(--secondary)] z-0 shadow-[0_12px_25px_rgba(0,0,0,0.15)]" />
+            <div className="absolute left-2 right-2 top-4 bottom-[-10px] rounded-[24px] bg-[var(--primary)] z-1 shadow-[0_10px_20px_rgba(0,0,0,0.15)]" />
             <div className="relative z-10 min-h-[calc(100vh-140px)] rounded-[24px] bg-[#fff] overflow-hidden border border-stone-300">
               <Outlet />
             </div>

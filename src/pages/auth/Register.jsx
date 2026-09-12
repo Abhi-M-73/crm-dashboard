@@ -49,12 +49,18 @@ const Register = () => {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-[#F4EFEA] p-4 sm:p-6 lg:p-10 font-sans antialiased text-stone-800">
-      <div className="relative flex w-full max-w-[1180px] overflow-hidden rounded-[40px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.07)] border border-stone-200/80 min-h-[640px] p-3">
+    <div
+      style={{
+        backgroundImage: `url(https://i.pinimg.com/736x/52/39/31/523931e5f2d36b90c8b66e307c86be7b.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+     className="flex min-h-screen w-full items-center justify-center bg-[#F4EFEA] p-4 sm:p-6 font-sans antialiased text-stone-800">
+      <div className="relative flex w-full max-w-5xl overflow-hidden rounded-[40px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.07)] border border-stone-200/80 min-h-[600px] p-3">
         
         {/* ================= LEFT CURVED SLANTED SHOWCASE ================= */}
         <div
-          className="relative hidden lg:flex w-[55%] flex-col justify-between p-8 text-white z-10 rounded-[40px] overflow-hidden"
+          className="relative hidden lg:flex w-[60%] flex-col justify-between p-8 text-white z-10 rounded-[40px] overflow-hidden"
           style={{
             clipPath: "polygon(0 0, 96% 0, 89% 100%, 0 100%)",
           backgroundImage: `url(https://i.pinimg.com/736x/52/8e/5a/528e5a559c0645f8e09441dc3a251962.jpg)`,
@@ -223,14 +229,14 @@ const Register = () => {
               </div>
 
               {/* Divider */}
-              <div className="relative flex items-center py-0.5">
+              {/* <div className="relative flex items-center py-0.5">
                 <div className="flex-grow border-t border-stone-200" />
                 <span className="mx-3 text-[11px] font-semibold text-stone-300">or</span>
                 <div className="flex-grow border-t border-stone-200" />
-              </div>
+              </div> */}
 
               {/* Google Button */}
-              <button
+              {/* <button
                 type="button"
                 className="flex w-full items-center justify-center gap-2 rounded-2xl border border-stone-200 bg-white py-3 text-sm font-bold text-stone-700 shadow-sm transition hover:bg-stone-50"
               >
@@ -253,7 +259,7 @@ const Register = () => {
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
                   />
                 </svg>
-              </button>
+              </button> */}
 
               {/* Submit CTA */}
               <button

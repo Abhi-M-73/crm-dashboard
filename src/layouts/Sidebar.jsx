@@ -307,7 +307,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
             <div
               className="
                 space-y-6 overflow-y-auto no-scrollbar
-                max-h-[calc(100vh-220px)]
+                max-h-[calc(100vh-180px)]
               "
             >
               {/* ================= OVERVIEW ================= */}
